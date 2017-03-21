@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
-            <a href="/signin" class="btn btn-success btn-signin">Login</a>
+            <a href="<?php echo site_url('signin'); ?>" class="btn btn-success btn-signin">Login</a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
