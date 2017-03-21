@@ -3,6 +3,9 @@
  * Brad Veryard's Awesome Framework
  */
 class Kik extends BaseController {
+
+    const RECAPTCHA_SECRET_KEY = '6LeRGxcTAAAAANuetpENkUiqHG2e7mjgschpySkN';
+
     /*
      * Start the controller
      */
@@ -38,8 +41,8 @@ class Kik extends BaseController {
     public function createAcc() {
         $error = '';
         if(Input::post('createAcc')) {
-            $secret = "6LeRGxcTAAAAANuetpENkUiqHG2e7mjgschpySkN";
-            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$_POST['g-recaptcha-response']);
+            $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' .
+                self::RECAPTCHA_SECRET_KEY . '&response=' . $_POST['g-recaptcha-response']);
             $response = json_decode($response, true);
             $kikname = Input::post('kik_username');
             $email = Input::post('user_email');
@@ -91,7 +94,7 @@ class Kik extends BaseController {
         if(Input::get('id')) {
                 $id = Input::get('id');
                 $getData = $this->modelFunction('modelGetData', array('*', 'user_uid', $id));
-                $rand = substr(md5(microtime()),rand(0,26),5);
+                $rand = substr(md5(microtime()), mt_rand(0,26),5);
                 if(empty($id)) {
                     header("Location: ".site_url());
                     exit();
@@ -138,7 +141,7 @@ class Kik extends BaseController {
             }
 
             if(empty($error)) {
-                $uid = rand(0,99).time();
+                $uid = mt_rand(0,99) . time();
                 $uid = str_shuffle($uid);
                 $to = 'admin@kikornot.com';
 

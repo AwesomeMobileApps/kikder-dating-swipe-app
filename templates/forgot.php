@@ -21,7 +21,6 @@
                         </div>
                         <div class="clearfix">
                             <input type="submit" name="forgot" class="btn btn-block btn-signin pull-left" value="Reset my password!">
-
                         </div>
                     </form>
                 </div>
