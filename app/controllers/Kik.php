@@ -111,7 +111,7 @@ class Kik extends BaseController {
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
                 $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-                $message .= '<a href="http://kikornot.com" style="color: #7c8b96;">Kik or not</a>';
+                $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
                 $message .= '</div>';
                 $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br /><br />';
                 $message .= '<code>'.$rand.'</code>';
@@ -151,11 +151,11 @@ class Kik extends BaseController {
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
                 $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-                $message .= '<a href="http://kikornot.com" style="color: #7c8b96;">Kik or not</a>';
+                $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
                 $message .= '</div>';
                 $message .= 'Hey'. $userData->user_name.'! If you forgot your password, please continue with the link below! <br />';
                 $message .= 'Otherwise, please just delete this message.<br /><br />';
-                $message .= '<a href="https://kikornot.com/forgot?id='.$uid.'" class="background-color: #82bc23;color: #FFF;padding: 18px 40px;font-size: 16px;border-radius: 40px;">Click here to get a new password!</a>';
+                $message .= '<a href="' . SITE_URL . 'forgot?id='.$uid.'" class="background-color: #82bc23;color: #FFF;padding: 18px 40px;font-size: 16px;border-radius: 40px;">Click here to get a new password!</a>';
                 $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
                 $this->modelFunction('forgotAdd', array($uid, $email));
                 mail($email, $subject, $message, $headers);

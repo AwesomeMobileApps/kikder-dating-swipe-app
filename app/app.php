@@ -2,9 +2,9 @@
 
 function site_url($var = '') {
     if(!empty($var)) {
-        return 'https://kikornot.com/'.$var;
+        return SITE_URL . $var;
     } else {
-        return 'https://kikornot.com/';
+        return SITE_URL;
     }
 }
 
@@ -32,14 +32,14 @@ spl_autoload_register("autoloadController");
 
 function asset_url($var = '') {
     if(!empty($var)) {
-        return 'https://kikornot.com/'.$var;
+        return SITE_URL . $var;
     } else {
-        return 'https://kikornot.com/assets/';
+        return SITE_URL . 'assets/';
     }
 }
 
 function redirect($url) {
-    header("Location: .".$url);
+    header("Location: ." . $url);
 }
 
 function error($type) {
