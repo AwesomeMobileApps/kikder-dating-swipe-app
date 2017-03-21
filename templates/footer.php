@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="text-center">Kik or not &copy; 2016<br />We are not affiliated with or endorsed by Tinder or Kik.</div>
+        <div class="text-center">Kik or not &copy; <?php echo date('Y') ?><br />We are not affiliated with or endorsed by Tinder or Kik.</div>
     </div>
 </footer>
 
