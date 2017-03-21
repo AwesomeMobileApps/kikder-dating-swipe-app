@@ -22,7 +22,7 @@
 
         <div class="hero-text">
             <h1>The best way to find kik users!</h1>
-            <p>Play hot-or-not & browse kik usernames</p>
+            <p>Play hot-or-not &amp; browse kik usernames</p>
             <a href="<?php echo site_url('create');?>" class="btn btn-hot">Create an account!</a>
         </div>
     </div>
@@ -93,4 +93,3 @@ echo '<div class="avatar"><img src="' . $luser->user_picture  . '"></div>';
             </div>
         </div>
     </div>
-
