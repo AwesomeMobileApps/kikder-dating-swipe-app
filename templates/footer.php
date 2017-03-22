@@ -24,11 +24,16 @@ var seed = <?php echo User::userId();?>;
 $(function() {
     $("#tinderslide ul ").on("swiperight", "li", function() {
                 $(this).addClass('rotate-right').find('.yes').fadeTo( "fast", 0.90 );
+                var match_id = $(this).data('match-id');
+
                 setTimeout(function() {
                     $('.rotate-right').remove();
                 }, 500); // <-- time in milliseconds
             $.ajax({
-                url: "./loadUsers?seed=1",
+                url: "./loadUsers",
+                type: "POST",
+                'seed': 1,
+                'match_id': match_id,
                 dataType:"HTML",
                 success: function(data) {
                  $("#tinderslide ul").prepend(data);
@@ -41,7 +46,9 @@ $(function() {
                     $('.rotate-left').hide();
                 }, 500); // <-- time in milliseconds
             $.ajax({
-                url: "./loadUsers?seed=1",
+                url: "./loadUsers",
+                type: "POST",
+                seed: 1,
                 dataType:"HTML",
                 success: function(data) {
                  $("#tinderslide ul").prepend(data);
