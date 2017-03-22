@@ -107,8 +107,6 @@ class Kik extends BaseController {
                     $subject = "Kik or not | New Password";
                     $password = Hash::generate($rand);
                     $headers = "From: " . $from ."\r\n";
-                    $headers .= "Reply-To: ". $from . "\r\n";
-                    $headers .= "CC: admin@kikornot.com\r\n";
                     $headers .= "MIME-Version: 1.0\r\n";
                     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
@@ -117,7 +115,10 @@ class Kik extends BaseController {
                     $message .= '</div>';
                     $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br /><br />';
                     $message .= '<code>'.$rand.'</code>';
-                    $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
+                    $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
+                    $message .= '&copy; Kik or not</a><br /><br />';
+                    $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
+                    $message .= '</div>';
                     $this->modelFunction('forgotDone', array($id, $getData->user_email, $password));
                     mail($getData->user_email, $subject, $message, $headers);
                     $success = 'A new password has been sent!';
@@ -145,8 +146,6 @@ class Kik extends BaseController {
                 $from = ADMIN_EMAIL;
                 $subject = "Kik or not | Request Password Change";
                 $headers = "From: " . $from ."\r\n";
-                $headers .= "Reply-To: ". $from . "\r\n";
-                $headers .= "CC: admin@kikornot.com\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
@@ -155,7 +154,10 @@ class Kik extends BaseController {
                 $message .= 'Hey'. $userData->user_name.'! If you forgot your password, please continue with the link below! <br />';
                 $message .= 'Otherwise, please just delete this message.<br /><br />';
                 $message .= '<a href="' . SITE_URL . 'forgot?id='.$uid.'" class="background-color: #82bc23;color: #FFF;padding: 18px 40px;font-size: 16px;border-radius: 40px;">Click here to get a new password!</a>';
-                $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
+                $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
+                $message .= '&copy; Kik or not</a><br /><br />';
+                $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
+                $message .= '</div>';
                 $this->modelFunction('forgotAdd', array($uid, $email));
                 mail($email, $subject, $message, $headers);
                 $success = 'An email has been sent to you!';
@@ -276,8 +278,11 @@ class Kik extends BaseController {
         $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
         $message .= '</div>';
         $message .= 'Hey'. $likedUser->user_name .'! ' . $userData->user_name . ' is interested to meet you.<br />';
-        $message .= '<a href="mailto:' . $from . '"><img src="' . $userPhoto . '" alt="' . $userData->user_name . '" /></a>';
-        $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
+        $message .= '<a href="mailto:' . $from . '"><img src="' . $userPhoto . '" alt="' . $userData->user_name . '" title="' . $userData->user_name . ' wants to meet you." /></a>';
+        $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
+        $message .= '&copy; Kik or not</a><br /><br />';
+        $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
+        $message .= '</div>';
         mail($to, $subject, $message, $headers);
     }
 }
