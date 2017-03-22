@@ -260,8 +260,24 @@ class Kik extends BaseController {
         fclose($file);
     }
 
-    protected function sendContact(stdClass $userData, stdClass $matchedUser)
+    protected function sendContact(stdClass $userData, stdClass $likedUser)
     {
+        $userPhoto = $userData->user_picture;
 
+        $from = $userData->user_email;
+        $to = $likedUser->user_email;
+
+        $subject = 'Someone wants to meet you';
+        $headers = "From: " . ADMIN_EMAIL ."\r\n";
+        $headers .= "Reply-To: ". $from . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
+        $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
+        $message .= '</div>';
+        $message .= 'Hey'. $likedUser->user_name .'! ' . $userData->user_name . ' is interested to meet you.<br />';
+        $message .= '<a href="mailto:' . $from . '"><img src="' . $userPhoto . '" alt="' . $userData->user_name . '" /></a>';
+        $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
+        mail($to, $subject, $message, $headers);
     }
 }
