@@ -452,7 +452,7 @@ div.avatar img {
 
 .how_to {
     text-align: center;
-    padding: 0 0 30px;
+    padding: 0 0 20px;
 }
 
 ul .yes {
@@ -553,4 +553,10 @@ no-js #loader { display: none;  }
   height: 100%;
   z-index: 9999;
   background: url('../img/loading.gif') center no-repeat #fff;
+}
+.green {
+   color: #11E90C;
+}
+.red{
+  color: #F00;
 }

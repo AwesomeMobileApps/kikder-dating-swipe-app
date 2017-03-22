@@ -16,9 +16,9 @@ kik or not
 <div class="se-pre-con"></div>
 <div class="container-fluid">
   <div class="clearfix"></div>
-          <div class="how_to">
-        Swipe right if you'd Kik, or left if you will not!
-        </div>
+      <div class="how_to">
+        Swipe <strong class="green">right</strong> if you'd Kik, or <strong class="red">left</strong> if you won't!
+      </div>
 <div id="container">
 
     <div class="row">
