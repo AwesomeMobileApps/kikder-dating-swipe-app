@@ -103,25 +103,25 @@ class Kik extends BaseController {
                 }
 
                 if(empty($error)) {
-                $to = 'admin@kikornot.com';
+                    $to = 'admin@kikornot.com';
 
-                $subject = "Kik or not | New Password";
-                $password = Hash::generate($rand);
-                $headers = "From: " . $to ."\r\n";
-                $headers .= "Reply-To: ". $to . "\r\n";
-                $headers .= "CC: admin@kikornot.com\r\n";
-                $headers .= "MIME-Version: 1.0\r\n";
-                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                    $subject = "Kik or not | New Password";
+                    $password = Hash::generate($rand);
+                    $headers = "From: " . $to ."\r\n";
+                    $headers .= "Reply-To: ". $to . "\r\n";
+                    $headers .= "CC: admin@kikornot.com\r\n";
+                    $headers .= "MIME-Version: 1.0\r\n";
+                    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-                $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-                $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
-                $message .= '</div>';
-                $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br /><br />';
-                $message .= '<code>'.$rand.'</code>';
-                $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
-                $this->modelFunction('forgotDone', array($id, $getData->user_email, $password));
-                mail($getData->user_email, $subject, $message, $headers);
-                $success = 'A new password has been sent!';
+                    $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
+                    $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
+                    $message .= '</div>';
+                    $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br /><br />';
+                    $message .= '<code>'.$rand.'</code>';
+                    $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">&copy; Kik or not</a>';
+                    $this->modelFunction('forgotDone', array($id, $getData->user_email, $password));
+                    mail($getData->user_email, $subject, $message, $headers);
+                    $success = 'A new password has been sent!';
                 }
 
                 return View::create('forgotDone', 'Your new password', array(
@@ -144,15 +144,12 @@ class Kik extends BaseController {
                 $uid = mt_rand(0,99) . time();
                 $uid = str_shuffle($uid);
                 $to = 'admin@kikornot.com';
-
                 $subject = "Kik or not | Request Password Change";
-
                 $headers = "From: " . $to ."\r\n";
                 $headers .= "Reply-To: ". $to . "\r\n";
                 $headers .= "CC: admin@kikornot.com\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
                 $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
                 $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
                 $message .= '</div>';
@@ -163,9 +160,7 @@ class Kik extends BaseController {
                 $this->modelFunction('forgotAdd', array($uid, $email));
                 mail($email, $subject, $message, $headers);
                 $success = 'An email has been sent to you!';
-
             }
-
         }
         }
         return View::create('forgot', 'Forgot Password', array(
@@ -206,7 +201,7 @@ class Kik extends BaseController {
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
                 Session::setacookie('loggedIn', true);
                 Session::setacookie('userId', $userData->user_id);
-                header("Location: ".site_url());
+                header('Location: ' . site_url());
                 exit();
             }
         }
@@ -219,25 +214,32 @@ class Kik extends BaseController {
         if(Main::loggedIn()) {
             Session::removeacookie('loggedIn');
             Session::removeacookie('userId');
-            header("Location: ./");
+            header('Location: ./');
              exit();
         } else {
-            header("Location: ./");
+            header('Location: ./');
                 exit();
         }
     }
 
     public function loadUsers() {
-        if(Input::get('seed')) {
-            $seed = Input::get('seed');
-            $users = $this->modelFunction('getUsers', array('1'));
+        $seed = Input::post('seed');
+        if ($seed) {
+            $user = $this->modelFunction('getUser', array(User::userId()));
             $this->modelFunction('addSwipe');
+
+            $matchId = Input::post('match_id');
+            if ($matchId) {
+                $matchedUser = $this->modelFunction('getUser', array($matchId));
+                $this->sendContact($user, $matchedUser);
+            }
+
             include('templates/append.php');
         }
     }
 
     public function userPictures() {
-        $file = fopen("./logs.txt", "r");
+        $file = fopen('./logs.txt', 'r');
         if($file) {
             $array = explode("\n", fread($file, filesize("./logs.txt")));
             foreach($array as $user) {
@@ -248,14 +250,19 @@ class Kik extends BaseController {
                 //}
             }
         }
-    /*while(!feof($file)) {
-        $line = fgets($file);
-        $picture = User::getAvatar($line);
-        //$writeSQL = "INSERT INTO `users` (`user_name`, `user_email`, `user_firstname`, `user_lastname`, `user_password`, `user_bio`, `user_picture`, `user_fake`) VALUES ('$line', '', '', '', '', '', '$picture', '1');";
-        //$myfile = file_put_contents('Insert.sql', $writeSQL.PHP_EOL , FILE_APPEND);
+        /*while(!feof($file)) {
+            $line = fgets($file);
+            $picture = User::getAvatar($line);
+            //$writeSQL = "INSERT INTO `users` (`user_name`, `user_email`, `user_firstname`, `user_lastname`, `user_password`, `user_bio`, `user_picture`, `user_fake`) VALUES ('$line', '', '', '', '', '', '$picture', '1');";
+            //$myfile = file_put_contents('Insert.sql', $writeSQL.PHP_EOL , FILE_APPEND);
 
-}*/
+        }*/
 
-fclose($file);
+        fclose($file);
+    }
+
+    protected function sendContact(stdClass $userData, stdClass $matchedUser)
+    {
+
     }
 }
