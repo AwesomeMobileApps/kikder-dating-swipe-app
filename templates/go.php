@@ -26,7 +26,7 @@ kik or not
     <ul>
     <?php foreach($users as $user):?>
     <?php $picture = $user->user_picture;?>
- <li class="buddy col-md-4 col-md-offset-4 col-sm-12" id="<?php echo $user->user_id;?>" data-match-id="<?php echo $user->user_id ?>" style="display: block;">
+ <li class="buddy col-md-4 col-md-offset-4 col-sm-12" id="<?php echo $user->user_id;?>" data-like-id="<?php echo $user->user_id ?>" style="display: block;">
              <div style="position: relative; width:100%;" class="color">
             <img class="img-responsive" style="display: block; width:100%;" src="<?php echo $picture;?>">
         <div class="yes"></div>

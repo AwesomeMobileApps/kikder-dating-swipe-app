@@ -227,10 +227,10 @@ class Kik extends BaseController {
             $user = $this->modelFunction('getUser', array(User::userId()));
             $this->modelFunction('addSwipe');
 
-            $matchId = Input::post('match_id');
-            if ($matchId) {
-                $matchedUser = $this->modelFunction('getUser', array($matchId));
-                $this->sendContact($user, $matchedUser);
+            $likeId = Input::post('like_id');
+            if ($likeId) {
+                $matchedUser = $this->modelFunction('getUser', array($likeId));
+                $this->sendContact($user, $likedUser);
             }
 
             include('templates/append.php');
