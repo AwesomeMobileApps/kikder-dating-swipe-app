@@ -231,8 +231,8 @@ class Kik extends BaseController {
 
             $likeId = Input::post('like_id');
             if ($likeId) {
-                $matchedUser = $this->modelFunction('getUser', array($likeId));
-                $this->sendContact($user, $likedUser);
+                $likedUser = $this->modelFunction('getUser', array($likeId));
+                $this->sendUserDetailsToLikedUser($user, $likedUser);
             }
 
             include('templates/append.php');
@@ -262,7 +262,7 @@ class Kik extends BaseController {
         fclose($file);
     }
 
-    protected function sendContact(stdClass $userData, stdClass $likedUser)
+    protected function sendUserDetailsToLikedUser(stdClass $userData, stdClass $likedUser)
     {
         $userPhoto = $userData->user_picture;
 
