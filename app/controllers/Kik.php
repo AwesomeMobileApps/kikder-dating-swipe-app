@@ -103,12 +103,11 @@ class Kik extends BaseController {
                 }
 
                 if(empty($error)) {
-                    $to = 'admin@kikornot.com';
-
+                    $from = ADMIN_EMAIL;
                     $subject = "Kik or not | New Password";
                     $password = Hash::generate($rand);
-                    $headers = "From: " . $to ."\r\n";
-                    $headers .= "Reply-To: ". $to . "\r\n";
+                    $headers = "From: " . $from ."\r\n";
+                    $headers .= "Reply-To: ". $from . "\r\n";
                     $headers .= "CC: admin@kikornot.com\r\n";
                     $headers .= "MIME-Version: 1.0\r\n";
                     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -143,10 +142,10 @@ class Kik extends BaseController {
             if(empty($error)) {
                 $uid = mt_rand(0,99) . time();
                 $uid = str_shuffle($uid);
-                $to = 'admin@kikornot.com';
+                $from = ADMIN_EMAIL;
                 $subject = "Kik or not | Request Password Change";
-                $headers = "From: " . $to ."\r\n";
-                $headers .= "Reply-To: ". $to . "\r\n";
+                $headers = "From: " . $from ."\r\n";
+                $headers .= "Reply-To: ". $from . "\r\n";
                 $headers .= "CC: admin@kikornot.com\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
