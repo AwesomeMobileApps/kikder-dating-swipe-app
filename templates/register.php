@@ -19,7 +19,8 @@
                         </div>
                         <div class="form-group">
                             <input type="email" name="user_email" placeholder="Email" class="form-control login-control">
-                            <small><i>That email will be shared with people you like, so their will be able to contact you back if their like you as well.</i></small>
+                            <small><i>Your email will be shared with girls/men you like, so their will be able to contact you back (if their like you as well).</i></small><br />
+                            <small>Which is the <span class="underline">only</span> and best <span class="underline">way</span> to <span class="underline">contact</span> <span class="underline">girls</span>/<span class="underline">men</span> <span class="underline">you like</span> <span class="underline">personally</span> &amp; <span class="underline">directly</span>.</small>
                         </div>
                         <div class="form-group">
                             <input type="password" name="user_pass" placeholder="Password" class="form-control login-control">

@@ -30,7 +30,7 @@
     <div class="home_about">
         <div class="container">
             <div class="text-center">
-                <h2>Date cute kik users is easy has never been so easy!</h2>
+                <h2><span class="underline">Date</span> cute kik <span class="underline">Girls</span> &amp; <span class="underline">Men</span> is easy has never been so easy!</h2>
                 <p>Swipe right if you'd Kik, or left if you will not!</p><br />
                 <small>Desktop users can use swipe with the mouse!</small>
             </div>
