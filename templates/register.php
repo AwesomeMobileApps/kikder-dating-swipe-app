@@ -18,10 +18,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="user_email" placeholder="Your email" class="form-control login-control">
+                            <input type="email" name="user_email" placeholder="Email" class="form-control login-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="user_pass" placeholder="Your password" class="form-control login-control">
+                            <input type="password" name="user_pass" placeholder="Password" class="form-control login-control">
                         </div>
                         <div class="text-center"><div class="g-recaptcha" data-sitekey="6LeRGxcTAAAAAO_qGJGcQs6aPu8kbcELfIIlqBnA"></div></div>
                         <br />

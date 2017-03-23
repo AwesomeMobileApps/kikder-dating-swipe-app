@@ -543,6 +543,18 @@ ul .no {
   color: rgba(0,0,0,.5);
 }
 
+.underline{
+  text-decoration: underline;
+}
+
+.green {
+   color: #11E90C;
+}
+
+.red{
+  color: #F00;
+}
+
 no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .se-pre-con {
@@ -553,10 +565,4 @@ no-js #loader { display: none;  }
   height: 100%;
   z-index: 9999;
   background: url('../img/loading.gif') center no-repeat #fff;
-}
-.green {
-   color: #11E90C;
-}
-.red{
-  color: #F00;
 }
