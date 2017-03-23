@@ -21,8 +21,8 @@
 <div class="container">
 
         <div class="hero-text">
-            <h1>The best way to find kik users!</h1>
-            <p>Play hot-or-not &amp; browse kik usernames</p>
+            <h1>Best way to find &amp; meet kik users!</h1>
+            <p>Play hot-or-not &amp; browse kik usernames (and date the ones you like)</p>
             <a href="<?php echo site_url('create');?>" class="btn btn-hot">Create an account!</a>
         </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="home_about">
         <div class="container">
             <div class="text-center">
-                <h2></h2>
+                <h2>Date cute kik users is easy has never been so easy!</h2>
                 <p>Swipe right if you'd Kik, or left if you will not!</p><br />
                 <small>Desktop users can use swipe with the mouse!</small>
             </div>

@@ -19,6 +19,7 @@
                         </div>
                         <div class="form-group">
                             <input type="email" name="user_email" placeholder="Email" class="form-control login-control">
+                            <small><i>That email will be shared with people you like, so their will be able to contact you back if their like you as well.</i></small>
                         </div>
                         <div class="form-group">
                             <input type="password" name="user_pass" placeholder="Password" class="form-control login-control">

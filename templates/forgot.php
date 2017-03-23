@@ -17,7 +17,7 @@
                     <?php echo $success; ?>
                     <form class="form form-signIn" action="<?php echo site_url('forgot'); ?>" method="POST">
                         <div class="form-group">
-                            <input type="text" name="user_email" class="form-control login-control" placeholder="Email">
+                            <input type="email" name="user_email" class="form-control login-control" placeholder="Email">
                         </div>
                         <div class="clearfix">
                             <input type="submit" name="forgot" class="btn btn-block btn-signin pull-left" value="Reset my password!">

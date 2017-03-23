@@ -17,14 +17,17 @@
                     <?php echo $error; ?>
                     <form class="form form-signIn" action="<?php echo site_url('signin'); ?>" method="POST">
                         <div class="form-group">
-                            <input type="text" name="user_email" class="form-control login-control" placeholder="Email">
+                            <input type="email" name="user_email" class="form-control login-control" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <input type="password" name="user_password" class="form-control login-control" placeholder="Password">
                         </div>
                         <div class="clearfix">
                             <input type="submit" name="signIn" class="btn btn-signin pull-left" value="Sign in">
-                            <a href="<?php echo site_url('forgot');?>" class="btn pull-right btn-forgot">Forgot Password?</a>
+                            <a href="<?php echo site_url('create');?>" class="btn pull-right btn-forgot">Not Registered?</a><br />
+                        </div>
+                      <div class="clearfix">
+                            <a href="<?php echo site_url('forgot');?>" class="btn pull-right">Forgot Password?</a>
                         </div>
                     </form>
                 </div>
