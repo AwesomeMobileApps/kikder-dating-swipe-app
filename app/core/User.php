@@ -42,11 +42,11 @@ class User {
         $metaContentAttributeNodes = $xpath->query('/html/head/meta[@property="og:image"]/@content');
 
         foreach($metaContentAttributeNodes as $metaContentAttributeNode)
-            {
+        {
             $thumb = $metaContentAttributeNode->nodeValue;
-            return str_replace('thumb', 'orig', $thumb);
-            }
+            return str_replace(array('thumb', 'http://'), array('orig', 'https://'), $thumb);
         }
+    }
 
     public static function loggedIn() {
         return Session::showCookie('loggedIn');
