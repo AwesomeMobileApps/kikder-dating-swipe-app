@@ -15,7 +15,7 @@
                     <hr />
                     <?php echo $error; ?>
                     <?php echo $success; ?>
-                    <form class="form form-signIn" action="<?php echo site_url('forgot'); ?>" method="POST">
+                    <form class="form form-signIn" action="<?php echo site_url('forgot'); ?>" method="post">
                         <div class="form-group">
                             <input type="email" name="user_email" class="form-control login-control" placeholder="Email">
                         </div>

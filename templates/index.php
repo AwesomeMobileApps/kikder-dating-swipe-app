@@ -77,7 +77,7 @@ echo '<div class="avatar"><img src="' . $luser->user_picture  . '"></div>';
                     <h4 class="modal-title">Sign in</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form form-signIn" action="<?php echo site_url(); ?>/signin" method="POST">
+                    <form class="form form-signIn" action="<?php echo site_url('signin'); ?>" method="post">
                         <div class="form-group">
                             <input type="text" name="user_email" class="form-control login-control" placeholder="Email">
                         </div>

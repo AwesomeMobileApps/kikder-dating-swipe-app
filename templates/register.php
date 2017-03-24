@@ -6,7 +6,7 @@
                     <h4><img src="assets/img/logo-dark.png"></h4>
                     <hr />
                     <?php echo $error; ?>
-                    <form class="form" method="POST" action="<?php echo site_url('create');?>">
+                    <form class="form" action="<?php echo site_url('create');?>" method="post">
                         <div class="form-group">
                             <input type="text" name="kik_username" placeholder="Kik Username" class="form-control login-control">
                         </div>

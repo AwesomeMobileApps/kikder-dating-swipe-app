@@ -15,7 +15,7 @@
                     <h4>Sign in!</h4>
                     <hr />
                     <?php echo $error; ?>
-                    <form class="form form-signIn" action="<?php echo site_url('signin'); ?>" method="POST">
+                    <form class="form form-signIn" action="<?php echo site_url('signin'); ?>" method="post">
                         <div class="form-group">
                             <input type="email" name="user_email" class="form-control login-control" placeholder="Email">
                         </div>

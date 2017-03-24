@@ -9,7 +9,7 @@
 kik or not
 </div>
 <div class="links">
-    <a href="<?php echo site_url('signout');?>">Sign out</a>
+    <a href="<?php echo site_url('signout'); ?>">Sign out</a>
 </div>
 </div>
 </div>
