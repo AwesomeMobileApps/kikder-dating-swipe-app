@@ -13,8 +13,14 @@
                 <div class="panel">
                     <h4>Forgot Password</h4>
                     <hr />
-                    <?php echo $error; ?>
-                    <?php echo $success; ?>
+                    <?php if (!empty($error)): ?>
+                        <p class="red"><?php echo $error; ?></p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($success)): ?>
+                        <p class="green"><?php echo $success; ?></p>
+                    <?php endif; ?>
+
                     <form class="form form-signIn" action="<?php echo site_url('forgot'); ?>" method="post">
                         <div class="form-group">
                             <input type="email" name="user_email" class="form-control login-control" placeholder="Email">
