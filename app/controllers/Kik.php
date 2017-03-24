@@ -113,7 +113,7 @@ class Kik extends BaseController {
                     $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
                     $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
                     $message .= '</div>';
-                    $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br /><br />';
+                    $message .= 'Hey'. $getData->user_name.'! We have generated you a password!<br />';
                     $message .= '<code>'.$rand.'</code>';
                     $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
                     $message .= '&copy; Kik or not</a><br /><br />';
