@@ -14,7 +14,9 @@
  <?php if(isset($_GET['msg'])) { echo '<div class="alert alert-success">Signup success! You can now login with your details</div>'; } ?>
                     <h4>Sign in!</h4>
                     <hr />
-                    <?php echo $error; ?>
+                    <?php if (!empty($error)): ?>
+                        <p class="red"><?php echo $error; ?></p>
+                    <?php endif; ?>
                     <form class="form form-signIn" action="<?php echo site_url('signin'); ?>" method="post">
                         <div class="form-group">
                             <input type="email" name="user_email" class="form-control login-control" placeholder="Email">

@@ -16,7 +16,7 @@
     // Wait for window load
     $(window).load(function() {
         // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");;
+        $(".se-pre-con").fadeOut("slow");
     });
 
 var seed = <?php echo User::userId();?>;
@@ -32,8 +32,7 @@ $(function() {
             $.ajax({
                 url: "./loadUsers",
                 type: "POST",
-                'seed': 1,
-                'match_id': match_id,
+                data: {'seed': 1, 'like_id': match_id},
                 dataType:"HTML",
                 success: function(data) {
                  $("#tinderslide ul").prepend(data);
@@ -48,7 +47,7 @@ $(function() {
             $.ajax({
                 url: "./loadUsers",
                 type: "POST",
-                seed: 1,
+                data: {'seed' : 1},
                 dataType:"HTML",
                 success: function(data) {
                  $("#tinderslide ul").prepend(data);

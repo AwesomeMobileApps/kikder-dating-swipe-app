@@ -226,13 +226,14 @@ class Kik extends BaseController {
     public function loadUsers() {
         $seed = Input::post('seed');
         if ($seed) {
-            $user = $this->modelFunction('getUser', array(User::userId()));
+            $users = $this->modelFunction('getUsers', array('1'));
             $this->modelFunction('addSwipe');
 
             $likeId = Input::post('like_id');
             if ($likeId) {
-                $likedUser = $this->modelFunction('getUser', array($likeId));
-                $this->sendUserDetailsToLikedUser($user, $likedUser);
+                $userData = $this->modelFunction('getUser', array(User::userId()));
+                $likedUserData = $this->modelFunction('getUser', array($likeId));
+                $this->sendUserDetailsToLikedUser($userData, $likedUserData);
             }
 
             include('templates/append.php');
