@@ -1,25 +1,16 @@
 <?php
-/*
- * Brad Veryard's Awesome Framework
- */
-class Kik extends BaseController {
 
+class Kik extends BaseController
+{
     const RECAPTCHA_SECRET_KEY = '6LeRGxcTAAAAANuetpENkUiqHG2e7mjgschpySkN';
 
-    /*
-     * Start the controller
-     */
-    public function __construct() {
-        /*
-         * Load model for controller
-         */
+    public function __construct()
+    {
         $this->loadModel('kik');
     }
 
-    /*
-     *  Index Route
-     */
-    public function index() {
+    public function index()
+    {
         if(Main::loggedIn()) {
             $users = $this->modelFunction('getUsers', array('10'));
             View::create('go', 'Go find some users!', array(
@@ -38,7 +29,8 @@ class Kik extends BaseController {
         }
     }
 
-    public function createAcc() {
+    public function createAcc()
+    {
         $error = '';
         if(Input::post('createAcc')) {
             $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' .
@@ -88,7 +80,8 @@ class Kik extends BaseController {
         ));
     }
 
-    public function forgot() {
+    public function forgot()
+    {
         $error = '';
         $success = '';
         if(Input::get('id')) {
@@ -170,7 +163,8 @@ class Kik extends BaseController {
         ));
     }
 
-    public function signIn() {
+    public function signIn()
+    {
         $error = '';
         if(Input::post('signIn')) {
             /*
@@ -211,7 +205,8 @@ class Kik extends BaseController {
         ));
     }
 
-    public function signOut() {
+    public function signOut()
+    {
         if(Main::loggedIn()) {
             Session::removeacookie('loggedIn');
             Session::removeacookie('userId');
@@ -219,11 +214,12 @@ class Kik extends BaseController {
              exit();
         } else {
             header('Location: ./');
-                exit();
+            exit;
         }
     }
 
-    public function loadUsers() {
+    public function loadUsers()
+    {
         $seed = Input::post('seed');
         if ($seed) {
             $users = $this->modelFunction('getUsers', array('1'));
@@ -240,7 +236,8 @@ class Kik extends BaseController {
         }
     }
 
-    public function userPictures() {
+    public function userPictures()
+    {
         $file = fopen('./logs.txt', 'r');
         if($file) {
             $array = explode("\n", fread($file, filesize("./logs.txt")));
