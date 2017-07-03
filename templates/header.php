@@ -19,4 +19,4 @@
     <![endif]-->
 </head>
 
-<body <?php if (isset($page) == 'go') { ?>class="kik"<?Php } ?>>
+<body <?php if (isset($page) == 'go') { ?>class="kik"<?php } ?>>
