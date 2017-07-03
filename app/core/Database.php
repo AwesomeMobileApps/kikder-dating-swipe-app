@@ -1,15 +1,17 @@
 <?php
 
-class Database {
-    private static $_pdo  = NULL;
+class Database
+{
+    private static $_pdo = NULL;
     private static $_stmt = NULL;
 
     /**
      * Establishes a connection.
-     * @param  array  $dbDetails The database details
+     * @param  array $dbDetails The database details
      * @return void
      */
-    public static function connect(array $dbDetails = array()) {
+    public static function connect(array $dbDetails = array())
+    {
         try {
             static::$_pdo = new PDO('mysql:host=' . $dbDetails['dbHost'] . ';dbname=' . $dbDetails['dbName'], $dbDetails['dbUser'], $dbDetails['dbPass']);
             static::$_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,14 +22,15 @@ class Database {
 
     /**
      * Prepares a query and executes if applicable.
-     * @param  string  $sql     The SQL to prepare
-     * @param  array   $binds   Values to bind to the query
+     * @param  string $sql The SQL to prepare
+     * @param  array $binds Values to bind to the query
      * @param  boolean $execute Automatically execute?
      * @return void
      */
 
 
-    public static function query($sql, array $binds = array(), $execute = true) {
+    public static function query($sql, array $binds = array(), $execute = true)
+    {
         static::$_stmt = static::$_pdo->prepare($sql);
 
         foreach ($binds as $key => $value) {
@@ -38,11 +41,13 @@ class Database {
             static::$_stmt->execute();
         }
     }
+
     /**
      * Returns the number of affected rows from the last executed query.
      * @return integer The number of affected rows
      */
-    public static function rowCount() {
+    public static function rowCount()
+    {
         return static::$_stmt->rowCount();
     }
 
@@ -50,11 +55,13 @@ class Database {
      * Returns a single row.
      * @return object The row
      */
-    public static function fetch() {
+    public static function fetch()
+    {
         return static::$_stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function quote($string) {
+    public static function quote($string)
+    {
         return static::$_pdo->quote($string);
     }
 
@@ -62,7 +69,8 @@ class Database {
      * Returns all rows
      * @return object The rows
      */
-    public static function fetchAll() {
+    public static function fetchAll()
+    {
         return static::$_stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

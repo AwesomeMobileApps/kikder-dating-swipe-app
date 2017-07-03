@@ -1,21 +1,14 @@
 <?php
 
-class Kik_Model {
+class Kik_Model
+{
     protected $table = 'users';
-
-    public function modelGetData($select, $column, $value) {
-        Database::query('SELECT ' . $select . ' FROM `'.$this->table.'` WHERE `' . $column . '` = :value', array(
-            ':value'    => $value
-        ));
-
-        return Database::fetch();
-    }
 
     public function changePicture($user_id, $picture)
     {
         Database::query("UPDATE users SET `user_picture` = :picture WHERE `user_id` = :user", array(
-            ':picture'    => $picture,
-            ':user'        => $user_id
+            ':picture' => $picture,
+            ':user' => $user_id
         ));
     }
 
@@ -64,7 +57,7 @@ class Kik_Model {
 
     public function getUsers($num)
     {
-        $seed = str_shuffle(time()+microtime());
+        $seed = str_shuffle(time() + microtime());
         $_SESSION['seed'] = $seed;
         Database::query("SELECT * FROM users WHERE user_picture <> '' ORDER BY RAND($seed) LIMIT 0,$num");
 
@@ -74,6 +67,15 @@ class Kik_Model {
     public function getUser($userId)
     {
         return $this->modelGetData('*', 'user_id', (int)$userId);
+    }
+
+    public function modelGetData($select, $column, $value)
+    {
+        Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
+            ':value' => $value
+        ));
+
+        return Database::fetch();
     }
 
     public function getRecentUsers()

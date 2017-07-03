@@ -1,6 +1,6 @@
 <?php
 
-$route->add('/','Kik@index');
+$route->add('/', 'Kik@index');
 $route->add('/signin', 'Kik@signIn');
 $route->add('/create', 'Kik@createAcc');
 $route->add('/signout', 'Kik@signOut');
