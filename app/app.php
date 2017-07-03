@@ -58,7 +58,7 @@ function s_excerpt($content, $end, $append) {
     } else {
         $excerpt = $content;
     }
-    
+
     return $excerpt;
 }
 
