@@ -1,11 +1,11 @@
 <?php
 
 function site_url($var = '') {
-    if(!empty($var)) {
+    if (!empty($var)) {
         return SITE_URL . $var;
-    } else {
-        return SITE_URL;
     }
+
+    return SITE_URL;
 }
 
 include_once('core/Route.php');
@@ -22,16 +22,17 @@ Database::connect(Main::get('db'));
 User::store();
 $route = new Route();
 function autoloadController($className) {
-    $filename = './app/controllers/'.$className.'.php';
-    if(is_readable($filename)) {
+    $filename = './app/controllers/' . $className . '.php';
+    if (is_readable($filename)) {
         require $filename;
     }
 }
-spl_autoload_register("autoloadController");
+
+spl_autoload_register('autoloadController');
 
 
 function asset_url($var = '') {
-    if(!empty($var)) {
+    if (!empty($var)) {
         return SITE_URL . $var;
     } else {
         return SITE_URL . 'assets/';
@@ -39,7 +40,7 @@ function asset_url($var = '') {
 }
 
 function redirect($url) {
-    header("Location: ." . $url);
+    header('Location: .' . $url);
 }
 
 function error($type) {
@@ -51,16 +52,16 @@ function clean($key) {
 }
 
 function s_excerpt($content, $end, $append) {
-    if(strlen($content) > $end) {
-        $excerpt = substr($content, 0, $end);
-        $excerpt = substr($content, 0, strrpos($content, " "));
-        $excerpt = $excerpt . $append;
+    if (strlen($content) > $end) {
+        $excerpt = substr($content, 0, strrpos($content, ' '));
+        $excerpt .= $append;
     } else {
         $excerpt = $content;
     }
+    
     return $excerpt;
 }
 
-require_once('routes.php');
+require_once 'routes.php';
 
 $route->run();
