@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="container">
-        <div class="text-center"><span class="underline"><a href="https://www.kik.com"
-                                                            target="_blank">Kik</a> or not</span> &copy; <?php echo date('Y') ?>
-            <br/>We are not affiliated with or endorsed by Kik or "Hot or Not".
+        <div class="text-center">
+            <span class="underline"><a href="https://www.kik.com" target="_blank">Kik</a> or not</span> &copy; <?php echo date('Y') ?><br/>
+            We are not affiliated with or endorsed by Kik or "Hot or Not".
         </div>
     </div>
 </footer>
