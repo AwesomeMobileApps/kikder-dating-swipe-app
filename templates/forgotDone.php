@@ -1,4 +1,4 @@
-<div class="home hero" style="padding: 37px;">
+<div class="home hero">
     <div class="logo">
         <a href="<?php echo site_url(); ?>">kik or not</a>
     </div>

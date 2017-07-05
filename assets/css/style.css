@@ -97,6 +97,10 @@ body {
     margin-top: -110px;
 }
 
+.home.hero {
+    padding: 37px;
+}
+
 .hero-text {
     position: relative;
 }
