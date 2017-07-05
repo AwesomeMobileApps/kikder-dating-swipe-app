@@ -10,6 +10,6 @@
         a.src = g;
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-96090187-1', 'auto');
+    ga('create', 'UA-<YOUR-GOOGLE-ANALYTICS_ID>', 'auto');
     ga('send', 'pageview');
 </script>
