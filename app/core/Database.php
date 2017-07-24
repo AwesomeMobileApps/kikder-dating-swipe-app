@@ -7,7 +7,9 @@ class Database
 
     /**
      * Establishes a connection.
+     *
      * @param  array $dbDetails The database details
+     *
      * @return void
      */
     public static function connect(array $dbDetails = array())
@@ -22,13 +24,13 @@ class Database
 
     /**
      * Prepares a query and executes if applicable.
+     *
      * @param  string $sql The SQL to prepare
      * @param  array $binds Values to bind to the query
      * @param  boolean $execute Automatically execute?
+     *
      * @return void
      */
-
-
     public static function query($sql, array $binds = array(), $execute = true)
     {
         static::$_stmt = static::$_pdo->prepare($sql);
@@ -44,7 +46,8 @@ class Database
 
     /**
      * Returns the number of affected rows from the last executed query.
-     * @return integer The number of affected rows
+     *
+     * @return int The number of affected rows
      */
     public static function rowCount()
     {
@@ -53,13 +56,17 @@ class Database
 
     /**
      * Returns a single row.
-     * @return object The row
+     *
+     * @return stdClass The row as an object.
      */
     public static function fetch()
     {
         return static::$_stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    /**
+     * @return string
+     */
     public static function quote($string)
     {
         return static::$_pdo->quote($string);
@@ -67,7 +74,8 @@ class Database
 
     /**
      * Returns all rows
-     * @return object The rows
+     *
+     * @return stdClass The rows as an object.
      */
     public static function fetchAll()
     {
