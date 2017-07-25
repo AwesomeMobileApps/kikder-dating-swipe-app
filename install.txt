@@ -1,5 +1,4 @@
 Open /app/core/config.php and replace with your database information.
 
-Any issues, feel free to contact me at dean@shayx.com
 
 Thanks!
