@@ -8,7 +8,7 @@
 --
 
 CREATE TABLE users (
-  user_id int(11) NOT NULL,
+  user_id int(11) NOT NULL AUTO_INCREMENT,
   user_name varchar(175) NOT NULL,
   user_email varchar(175) NOT NULL,
   user_firstname varchar(175) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE swipe (
-  swipe_id int(11) NOT NULL,
+  swipe_id int(11) NOT NULL AUTO_INCREMENT,
   swipe_user int(11) NOT NULL,
   swipe_time varchar(18) NOT NULL,
   PRIMARY KEY (swipe_id),
