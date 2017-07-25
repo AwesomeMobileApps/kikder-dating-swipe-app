@@ -56,6 +56,9 @@ class Blog_Model
         )");
     }
 
+    /**
+     * @return stdClass
+     */
     public function getLastRow()
     {
         Database::query('SELECT * FROM `' . $this->table . '` ORDER BY shot_id DESC LIMIT 1');
