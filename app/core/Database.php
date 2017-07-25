@@ -2,8 +2,11 @@
 
 class Database
 {
-    private static $_pdo = NULL;
-    private static $_stmt = NULL;
+    /** @var null|PDO */
+    private static $_pdo = null;
+
+    /** @var null|PDOStatement */
+    private static $_stmt = null;
 
     /**
      * Establishes a connection.
