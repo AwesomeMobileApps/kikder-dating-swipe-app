@@ -16,11 +16,7 @@ include_once('core/User.php');
 include_once('core/Session.php');
 include_once('core/Input.php');
 include_once('core/Hash.php');
-Main::store();
-Database::connect(Main::get('db'));
 
-User::store();
-$route = new Route();
 function autoloadController($className) {
     $filename = './app/controllers/' . $className . '.php';
     if (is_readable($filename)) {
@@ -64,4 +60,9 @@ function s_excerpt($content, $end, $append) {
 
 require_once 'routes.php';
 
+Main::store();
+Database::connect(Main::get('db'));
+
+User::store();
+$route = new Route();
 $route->run();
