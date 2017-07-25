@@ -2,6 +2,7 @@
 
 class Kik_Model
 {
+    /** @var string Table name */
     protected $table = 'users';
 
     public function changePicture($user_id, $picture)
@@ -64,6 +65,11 @@ class Kik_Model
         return Database::fetchAll();
     }
 
+    /**
+     * @param int $userId
+     *
+     * @return stdClass
+     */
     public function getUser($userId)
     {
         return $this->modelGetData('*', 'user_id', (int)$userId);

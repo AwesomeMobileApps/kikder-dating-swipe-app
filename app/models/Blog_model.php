@@ -2,6 +2,7 @@
 
 class Blog_Model
 {
+    /** @var string Table name */
     protected $table = 'posts';
 
     public function listPosts()
@@ -11,6 +12,13 @@ class Blog_Model
         return Database::fetchAll();
     }
 
+    /**
+     * @param string $select
+     * @param string $column
+     * @param string $value
+     *
+     * @return stdClass
+     */
     public function modelGetData($select, $column, $value)
     {
         Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
@@ -21,6 +29,11 @@ class Blog_Model
     }
 
 
+    /**
+     * @param string $post_slug
+     *
+     * @return stdClass
+     */
     public function viewPost($post_slug)
     {
         Database::query('SELECT posts.*, users.* FROM `' . $this->table . '`, `users` WHERE posts.post_author = users.user_id AND posts.post_slug = :post_slug', array(
@@ -30,6 +43,11 @@ class Blog_Model
         return Database::fetch();
     }
 
+    /**
+     * @param string $imageUrl
+     * @param string $name
+     * @param int $user_id
+     */
     public function addShot($imageUrl, $name, $user_id)
     {
         $time = time();

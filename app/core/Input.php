@@ -4,6 +4,7 @@ class Input
 {
     /**
      * Returns the IP address of the user.
+     *
      * @return string The IP
      */
     public static function userIp()
@@ -13,6 +14,7 @@ class Input
 
     /**
      * Returns the agent of the user.
+     *
      * @return string The user agent
      */
     public static function userAgent()
@@ -22,7 +24,9 @@ class Input
 
     /**
      * Returns the value of a POST variable.
+     *
      * @param  string $key The key
+     *
      * @return string|boolean       The value
      */
     public static function post($key)
@@ -32,7 +36,9 @@ class Input
 
     /**
      * Returns the value of a GET variable.
+     *
      * @param  string $key The key
+     *
      * @return string|boolean      The value
      */
     public static function get($key)
@@ -41,8 +47,10 @@ class Input
     }
 
     /**
-     * Returns the value of a clean input
+     * Returns the value of a clean input.
+     *
      * @param  string $key The key
+     *
      * @return string|boolean      The value
      */
     public static function clean($key)

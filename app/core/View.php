@@ -2,6 +2,11 @@
 
 class View
 {
+    /**
+     * @param string $view
+     * @param string $title
+     * @param array $data
+     */
     public static function create($view, $title = '', array $data = array())
     {
         extract($data);
@@ -16,6 +21,12 @@ class View
         include_once($template_url . 'footer.php');
     }
 
+    /**
+     * @param string $view
+     * @param string $title
+     * @param int $paritals
+     * @param array $data
+     */
     public static function admin($view, $title = '', $paritals = 1, array $data = array())
     {
         extract($data);

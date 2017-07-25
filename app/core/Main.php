@@ -2,6 +2,7 @@
 
 class Main
 {
+    /** @var array */
     private static $_config = array();
 
     public static function loggedIn()
@@ -11,6 +12,7 @@ class Main
 
     /**
      * Stores the config in a property.
+     *
      * @return void
      */
     public static function store()
@@ -23,8 +25,10 @@ class Main
 
     /**
      * Returns a config value.
+     *
      * @param  string $key The key
      * @param  string $secondKey Optional second key
+     *
      * @return string|boolean    The value
      */
     public static function get($key, $secondKey = '')
@@ -38,10 +42,12 @@ class Main
 
     /**
      * Returns the excerpt.
+     *
      * @param  string $str The incoming text
      * @param  intval $startPost Optional start pos
      * @param  intval $maxLength Optional max length
      * @param  string $append Optional append
+     *
      * @return string|boolean    Excerpt
      */
     public static function excerpt($str, $startPos = 0, $maxLength = 250, $append = '...')

@@ -2,10 +2,19 @@
 
 class Route
 {
+    /** @var array */
     private $_uri = array();
+
+    /** @var array */
     private $_method = array();
+
+    /** @var array */
     private $_class = array();
 
+    /**
+     * @param string $uri
+     * @param string $method
+     */
     public function add($uri, $method = '')
     {
         $this->_uri[] = '/' . trim($uri, '/');

@@ -2,6 +2,7 @@
 
 class User
 {
+    /** @var stdClass The user fields */
     private static $_userData;
 
     public static function store()
@@ -15,6 +16,9 @@ class User
         }
     }
 
+    /**
+     * @return string
+     */
     public static function userName()
     {
         if (static::loggedIn()) {
@@ -22,11 +26,17 @@ class User
         }
     }
 
+    /**
+     * @return string|bool
+     */
     public static function loggedIn()
     {
         return Session::showCookie('loggedIn');
     }
 
+    /**
+     * @return string
+     */
     public static function userPicture()
     {
         if (static::loggedIn()) {
@@ -34,6 +44,9 @@ class User
         }
     }
 
+    /**
+     * @return int
+     */
     public static function userId()
     {
         if (static::loggedIn()) {
@@ -41,6 +54,11 @@ class User
         }
     }
 
+    /**
+     * @param string $kikUsername
+     *
+     * @return string
+     */
     public static function getAvatar($kikUsername)
     {
 
@@ -58,5 +76,4 @@ class User
             return str_replace(array('thumb', 'http://'), array('orig', 'https://'), $thumb);
         }
     }
-
 }

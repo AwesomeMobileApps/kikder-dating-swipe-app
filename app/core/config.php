@@ -1,5 +1,5 @@
 <?php
-
+/** @var $config Database details */
 $config = array(
     'db' => array(
         'dbHost' => 'localhost',
