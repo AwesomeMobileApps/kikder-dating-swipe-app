@@ -58,11 +58,14 @@ function s_excerpt($content, $end, $append) {
     return $excerpt;
 }
 
-require_once 'routes.php';
+// Let's run the app!
+$route = new Route();
+require 'routes.php';
 
 Main::store();
 Database::connect(Main::get('db'));
-
 User::store();
-$route = new Route();
-$route->run();
+
+$route->run(); // Last one, run the URI router
+
+
