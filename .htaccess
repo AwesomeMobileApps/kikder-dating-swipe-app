@@ -4,10 +4,14 @@ Options +FollowSymLinks
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    ## Uncomment "#RewriteBase /" below (remove "#") if the website is installed in a folder, and then add the folder name after the slash "/"
+    ## Example: If it is installed in "/public_html/kikder/", then it should be "RewriteBase /kikder/", however it can depends of your Apache configuration.
+    ## If you need, please ask your hosting company or check the Apache doc: http://httpd.apache.org/docs/current/mod/mod_rewrite.html
 
     #RewriteBase /
+
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-
     RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
 </IfModule>
