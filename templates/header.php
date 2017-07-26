@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kik or not! &mdash; <?php echo $title; ?></title>
+    <title><?php echo SITE_NAME; ?> &mdash; <?php echo $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <meta name="description" content="Find Kik users with a Tinder way!">

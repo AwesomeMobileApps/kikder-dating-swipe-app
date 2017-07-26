@@ -1,6 +1,6 @@
 <div class="home hero" style="padding: 37px;">
     <div class="logo">
-        <a href="<?php echo site_url(); ?>">kik or not</a>
+        <a href="<?php echo site_url(); ?>"><?php echo SITE_NAME; ?></a>
     </div>
     <div class="menu">
         <a href="<?php echo site_url('create'); ?>">Create an account</a>
