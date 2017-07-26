@@ -19,7 +19,6 @@ class Route
     {
         $this->_uri[] = '/' . trim($uri, '/');
         $this->_method[] = $method;
-
     }
 
     public function run()
