@@ -1,17 +1,13 @@
-RewriteEngine On
+Options -MultiViews -Indexes
+Options +FollowSymLinks
 
-RewriteCond %{HTTP_HOST} ^kikornot\.com [NC]
-RewriteCond %{SERVER_PORT} 80
-RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
-RewriteRule ^(.*)$ https://kikornot.com/$1 [R=301,L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
 
-#RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
-RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
+    #RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
+</IfModule>
