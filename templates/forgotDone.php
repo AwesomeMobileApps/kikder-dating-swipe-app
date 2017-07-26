@@ -1,11 +1,12 @@
 <div class="home hero">
     <div class="logo">
-        <a href="<?php echo site_url(); ?>">kik or not</a>
+        <a href="<?php echo site_url(); ?>"><?php echo SITE_NAME; ?></a>
     </div>
     <div class="menu">
         <a href="<?php echo site_url('signin'); ?>">Sign in</a>
     </div>
 </div>
+
 <div class="createAcc">
     <div class="container">
         <div class="row">

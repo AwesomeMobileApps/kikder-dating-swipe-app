@@ -6,7 +6,7 @@
                 <b><?php echo User::userName(); ?></b>
             </div>
             <div class="logo">
-                kik or not
+                <?php echo SITE_NAME; ?>
             </div>
             <div class="links">
                 <a href="<?php echo site_url('signout'); ?>">Sign out</a>
