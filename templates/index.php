@@ -60,19 +60,18 @@
         </div>
     </div>
 </div>
+
 <div class="home_latest">
     <div class="container">
         <h2>Latest Users</h2>
-        <?php foreach ($recent as $luser) {
-            echo '<div class="avatar"><img src="' . $luser->user_picture . '"></div>';
-
-        }
-
-        ?>
+        <?php foreach ($recent as $luser): ?>
+            <div class="avatar">
+                <img src="<?php echo $luser->user_picture; ?>">
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
-</div>
-</div>
+
 <!-- Login Modal -->
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
     <div class="modal-dialog" role="document">
