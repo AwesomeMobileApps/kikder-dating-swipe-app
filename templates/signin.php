@@ -6,6 +6,7 @@
         <a href="<?php echo site_url('create'); ?>">Create an account</a>
     </div>
 </div>
+
 <div class="createAcc">
     <div class="container">
         <div class="row">

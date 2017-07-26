@@ -6,7 +6,9 @@
             <div class="yes"></div>
             <div class="no"></div>
             <div class="buddy-info">
-                <h4><a href="kik://<?php echo $user->user_name; ?>"><?php echo $user->user_name; ?></a></h4>
+                <h4>
+                    <a href="kik://<?php echo $user->user_name; ?>"><?php echo $user->user_name; ?></a>
+                </h4>
             </div>
             <div class="like">Would Kik</div>
             <div class="dislike">Would Not Kik</div>

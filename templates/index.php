@@ -18,6 +18,7 @@
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
+
 <div class="home hero">
     <div class="container">
 
@@ -28,6 +29,7 @@
         </div>
     </div>
 </div>
+
 <div class="home_about">
     <div class="container">
         <div class="text-center">
@@ -39,6 +41,7 @@
 
     </div>
 </div>
+
 <div class="home_stats">
     <div class="container">
         <div class="row">

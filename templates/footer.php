@@ -60,7 +60,6 @@
                 });
             });
         });
-
     </script>
 <?php endif; ?>
 <script>
