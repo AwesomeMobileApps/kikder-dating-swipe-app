@@ -1,13 +1,6 @@
 <?php
 
-function site_url($var = '') {
-    if (!empty($var)) {
-        return SITE_URL . $var;
-    }
-
-    return SITE_URL;
-}
-
+require 'core/helpers.php';
 require 'core/Route.php';
 require 'core/Database.php';
 require 'core/Main.php';
@@ -26,37 +19,6 @@ function autoloadController($className) {
 
 spl_autoload_register('autoloadController');
 
-
-function asset_url($var = '') {
-    if (!empty($var)) {
-        return SITE_URL . $var;
-    } else {
-        return SITE_URL . 'assets/';
-    }
-}
-
-function redirect($url) {
-    header('Location: .' . $url);
-}
-
-function error($type) {
-    echo $type;
-}
-
-function clean($key) {
-    return addslashes(htmlentities(trim($key)));
-}
-
-function s_excerpt($content, $end, $append) {
-    if (strlen($content) > $end) {
-        $excerpt = substr($content, 0, strrpos($content, ' '));
-        $excerpt .= $append;
-    } else {
-        $excerpt = $content;
-    }
-
-    return $excerpt;
-}
 
 // Let's run the app!
 $route = new Route();
