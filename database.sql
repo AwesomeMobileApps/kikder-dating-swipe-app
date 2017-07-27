@@ -21,6 +21,7 @@ CREATE TABLE users (
   PRIMARY KEY (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 CREATE TABLE swipe (
   swipe_id int(11) NOT NULL AUTO_INCREMENT,
   swipe_user int(11) NOT NULL,
