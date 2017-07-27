@@ -61,6 +61,6 @@ class Session
      */
     public static function showCookie($name)
     {
-        return isset($_COOKIE[$name]) ? $_COOKIE[$name] : FALSE;
+        return isset($_COOKIE[$name]) ? $_COOKIE[$name] : false;
     }
 }

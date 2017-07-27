@@ -5,6 +5,9 @@ class Main
     /** @var array */
     private static $_config = array();
 
+    /**
+     * @return bool|string
+     */
     public static function loggedIn()
     {
         return Session::showCookie('loggedIn');
