@@ -187,10 +187,7 @@ class Kik extends BaseController
 
             if (empty($error)) {
                 /*
-                 * All good
-                 */
-                /*
-                 * Check if they changed profile picture
+                 * No errors! Check if they changed profile picture
                  */
                 $picture = User::getAvatar($userData->user_name);
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
