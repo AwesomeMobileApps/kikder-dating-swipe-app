@@ -1,4 +1,5 @@
 <?php
+
 /** @var $config Database details */
 $config = array(
     'db' => array(
@@ -6,5 +7,5 @@ $config = array(
         'dbUser' => 'ph7cms',
         'dbPass' => 'ph7cms',
         'dbName' => 'kikornot'
-    ),
+    )
 );
