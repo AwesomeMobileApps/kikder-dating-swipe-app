@@ -21,7 +21,7 @@ class Main
     public static function store()
     {
         if (empty(static::$_config)) {
-            include_once APP_PATH . 'config.php');
+            include_once APP_PATH . 'config.php';
             static::$_config = $config;
         }
     }
