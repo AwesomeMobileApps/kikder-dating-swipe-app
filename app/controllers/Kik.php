@@ -207,12 +207,10 @@ class Kik extends BaseController
         if (Main::loggedIn()) {
             Session::removeacookie('loggedIn');
             Session::removeacookie('userId');
-            header('Location: ./');
-            exit();
-        } else {
-            header('Location: ./');
-            exit;
         }
+
+        header('Location: ./');
+        exit;
     }
 
     public function loadUsers()
