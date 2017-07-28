@@ -250,30 +250,7 @@ class Kik extends BaseController
         $message .= '&copy; Kik or not</a><br /><br />';
         $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
         $message .= '</div>';
+
         mail($to, $subject, $message, $headers);
-    }
-
-    public function userPictures()
-    {
-        $file = fopen('./logs.txt', 'r');
-        if ($file) {
-            $array = explode("\n", fread($file, filesize("./logs.txt")));
-            foreach ($array as $user) {
-                $picture = User::getAvatar($user);
-                //if(!empty($picture)) {
-                $writeSQL = "INSERT INTO `users` (`user_name`, `user_email`, `user_firstname`, `user_lastname`, `user_password`, `user_bio`, `user_picture`, `user_fake`) VALUES ('$user', '', '', '', '', '', '$picture', '1');";
-                $myfile = file_put_contents('kik.sql', $writeSQL . PHP_EOL, FILE_APPEND);
-                //}
-            }
-        }
-        /*while(!feof($file)) {
-            $line = fgets($file);
-            $picture = User::getAvatar($line);
-            //$writeSQL = "INSERT INTO `users` (`user_name`, `user_email`, `user_firstname`, `user_lastname`, `user_password`, `user_bio`, `user_picture`, `user_fake`) VALUES ('$line', '', '', '', '', '', '$picture', '1');";
-            //$myfile = file_put_contents('Insert.sql', $writeSQL.PHP_EOL , FILE_APPEND);
-
-        }*/
-
-        fclose($file);
     }
 }
