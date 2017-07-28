@@ -2,8 +2,6 @@
 
 class Kik extends BaseController
 {
-    const RECAPTCHA_SECRET_KEY = '6LeRGxcTAAAAANuetpENkUiqHG2e7mjgschpySkN';
-
     public function __construct()
     {
         $this->loadModel('kik');
@@ -34,7 +32,7 @@ class Kik extends BaseController
         $error = '';
         if (Input::post('createAcc')) {
             $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' .
-                self::RECAPTCHA_SECRET_KEY . '&response=' . $_POST['g-recaptcha-response']);
+                RECAPTCHA_SECRET_KEY . '&response=' . $_POST['g-recaptcha-response']);
             $response = json_decode($response, true);
             $kikname = Input::post('kik_username');
             $email = Input::post('user_email');
