@@ -7,7 +7,7 @@ class Blog_Model
 
     public function listPosts()
     {
-        Database::query("SELECT posts.*, users.* FROM `$this->table`, `users` WHERE posts.post_author = users.user_id  ORDER BY posts.post_id DESC");
+        Database::query("SELECT posts.*, users.* FROM $this->table, users WHERE posts.post_author = users.user_id  ORDER BY posts.post_id DESC");
 
         return Database::fetchAll();
     }
@@ -21,7 +21,7 @@ class Blog_Model
      */
     public function modelGetData($select, $column, $value)
     {
-        Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
+        Database::query('SELECT ' . $select . ' FROM ' . $this->table . ' WHERE ' . $column . ' = :value', array(
             ':value' => $value
         ));
 

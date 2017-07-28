@@ -25,7 +25,7 @@ class Blog extends BaseController
                 'post_content' => $data->post_content,
                 'post_author' => $data->user_firstname . ' ' . $data->user_lastname,
                 'post_time' => $data->post_time,
-                'post_author_desc' => $data->user_bio
+                'post_author_desc' => $data->user_description
             ));
         }
     }

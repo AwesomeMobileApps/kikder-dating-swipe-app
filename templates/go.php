@@ -29,7 +29,7 @@
                                 data-like-id="<?php echo $user->user_id ?>" style="display: block;">
                                 <div style="position: relative; width:100%;" class="color">
                                     <img class="img-responsive" style="display: block; width:100%;"
-                                         src="<?php echo $user->user_picture; ?>">
+                                         src="<?php echo $user->user_avatar; ?>">
                                     <div class="yes"></div>
                                     <div class="no"></div>
                                     <div class="buddy-info">

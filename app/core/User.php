@@ -42,7 +42,7 @@ class User
     public static function userPicture()
     {
         if (static::loggedIn()) {
-            return static::$_userData->user_picture;
+            return static::$_userData->user_avatar;
         }
     }
 

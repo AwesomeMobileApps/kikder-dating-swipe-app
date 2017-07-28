@@ -14,7 +14,7 @@ class Player_Model
      */
     public function modelGetData($select, $column, $value)
     {
-        Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
+        Database::query('SELECT ' . $select . ' FROM ' . $this->table . ' WHERE ' . $column . ' = :value', array(
             ':value' => $value
         ));
 
@@ -31,7 +31,7 @@ class Player_Model
      */
     public function createPlayer($dribbbleId, $fullName, $picture, $permission, $username, $code)
     {
-        Database::query("INSERT INTO `users` (user_token,user_name, can_upload_shot, user_dribbble, user_picture, user_dribbble_id) VALUES(
+        Database::query("INSERT INTO users (user_token,user_name, can_upload_shot, user_dribbble, user_avatar, user_dribbble_id) VALUES(
             '$code', '$fullName', $permission', '$username', '$picture','$dribbbleId'
         )");
     }

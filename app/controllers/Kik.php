@@ -231,7 +231,7 @@ class Kik extends BaseController
 
     protected function sendUserDetailsToLikedUser(stdClass $userData, stdClass $likedUser)
     {
-        $userPhoto = $userData->user_picture;
+        $userPhoto = $userData->user_avatar;
 
         $from = $userData->user_email;
         $to = $likedUser->user_email;

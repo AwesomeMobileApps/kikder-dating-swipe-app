@@ -31,36 +31,59 @@ class Kik_Model
 
     public function forgotAdd($uid, $email)
     {
-        Database::query("UPDATE users SET user_uid = '$uid' WHERE user_email = '$email'");
+        $binds = [
+            ':uid' => $uid,
+            ':email' => $email
+        ];
+        Database::query('UPDATE users SET user_uid = :uid WHERE user_email = :email', $binds);
     }
 
     public function forgotDone($uid, $email, $password)
     {
-        Database::query("UPDATE users SET user_uid = '', user_password = '$password' WHERE user_email = '$email'");
+        $binds = [
+            ':password' => $password,
+            ':email' => $email
+        ];
+        Database::query("UPDATE users SET user_uid = '', user_password = :password WHERE user_email = :email", $binds);
     }
 
     public function addSwipe()
     {
-        $user = User::userId();
-        $time = time();
-        Database::query("INSERT INTO swipe (swipe_user, swipe_time) VALUES('$user', '$time')");
+        $binds = [
+            ':user' => User::userId(),
+            ':time' => time()
+        ];
+
+        Database::query("INSERT INTO swipe (swipe_user, swipe_time) VALUES(:user, :time)", $binds);
     }
 
     public function updateAccount($kik, $email, $pass)
     {
-        Database::query("UPDATE users SET user_email = '$email', user_password = '$pass', user_fake = '0' WHERE user_name = '$kik'");
+        $binds = [
+            ':kik' => $kik,
+            ':password' => $pass,
+            ':email' => $email
+        ];
+        Database::query("UPDATE users SET user_email = :email, user_password = :password, user_fake = '0' WHERE user_name = :kik", $binds);
     }
 
     public function createAccount($kik, $email, $gender, $pass)
     {
-        Database::query("INSERT INTO users (user_name, user_email, user_gender, user_password) VALUES('$kik', '$email', '$gender', '$pass')");
+        $binds = [
+            ':kik' => $kik,
+            ':email' => $email,
+            ':gender' => $gender,
+            ':password' => $pass
+        ];
+
+        Database::query("INSERT INTO users (user_name, user_email, user_gender, user_password) VALUES(:kik, :email, :gender, :password)", $binds);
     }
 
     public function getUsers($num)
     {
         $seed = str_shuffle(time() + microtime());
         $_SESSION['seed'] = $seed;
-        Database::query("SELECT * FROM users WHERE user_picture <> '' ORDER BY RAND($seed) LIMIT 0,$num");
+        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY RAND($seed) LIMIT 0,$num");
 
         return Database::fetchAll();
     }
@@ -77,16 +100,14 @@ class Kik_Model
 
     public function modelGetData($select, $column, $value)
     {
-        Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
-            ':value' => $value
-        ));
+        Database::query('SELECT ' . $select . ' FROM ' . $this->table . ' WHERE ' . $column . ' = :value', [':value' => $value]);
 
         return Database::fetch();
     }
 
     public function getRecentUsers()
     {
-        Database::query("SELECT * FROM users WHERE user_picture <> '' ORDER BY user_id DESC LIMIT 16");
+        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY user_id DESC LIMIT 16");
 
         return Database::fetchAll();
     }

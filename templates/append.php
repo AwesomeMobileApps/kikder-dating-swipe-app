@@ -2,7 +2,7 @@
     <li class="buddy col-md-4 col-md-offset-4" id="<?php echo $user->user_id; ?>"
         data-like-id="<?php echo $user->user_id ?>" style="display: block;">
         <div style="position: relative; width: 100%;">
-            <img class="img-responsive" style="display: block; width: 100%;" src="<?php echo $user->user_picture; ?>">
+            <img class="img-responsive" style="display: block; width: 100%;" src="<?php echo $user->user_avatar; ?>">
             <div class="yes"></div>
             <div class="no"></div>
             <div class="buddy-info">
