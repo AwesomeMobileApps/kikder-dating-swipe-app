@@ -5,11 +5,15 @@ class Kik_Model
     /** @var string Table name */
     protected $table = 'users';
 
-    public function changePicture($user_id, $picture)
+    /**
+     * @param string $userId
+     * @param string $avatar
+     */
+    public function changePicture($userId, $avatar)
     {
         $binds = [
-            ':avatar' => $picture,
-            ':user' => $user_id
+            ':avatar' => $avatar,
+            ':user' => $userId
         ];
 
         Database::query("UPDATE users SET user_avatar = :avatar WHERE user_id = :user", $binds);
@@ -31,15 +35,25 @@ class Kik_Model
         return count($res);
     }
 
+    /**
+     * @param int $uid
+     * @param string $email
+     */
     public function forgotAdd($uid, $email)
     {
         $binds = [
             ':uid' => $uid,
             ':email' => $email
         ];
+
         Database::query('UPDATE users SET user_uid = :uid WHERE user_email = :email', $binds);
     }
 
+    /**
+     * @param int $uid
+     * @param string $email
+     * @param string $password
+     */
     public function forgotDone($uid, $email, $password)
     {
         $binds = [
@@ -59,6 +73,11 @@ class Kik_Model
         Database::query("INSERT INTO swipe (swipe_user, swipe_time) VALUES(:user, :time)", $binds);
     }
 
+    /**
+     * @param string $kik
+     * @param string $email
+     * @param string $pass
+     */
     public function updateAccount($kik, $email, $pass)
     {
         $binds = [
@@ -69,6 +88,12 @@ class Kik_Model
         Database::query("UPDATE users SET user_email = :email, user_password = :password, user_fake = '0' WHERE user_name = :kik", $binds);
     }
 
+    /**
+     * @param string $kik
+     * @param string $email
+     * @param int $gender
+     * @param string $pass
+     */
     public function createAccount($kik, $email, $gender, $pass)
     {
         $binds = [
@@ -81,11 +106,16 @@ class Kik_Model
         Database::query("INSERT INTO users (user_name, user_email, user_gender, user_password) VALUES(:kik, :email, :gender, :password)", $binds);
     }
 
+    /**
+     * @param int $num
+     *
+     * @return stdClass
+     */
     public function getUsers($num)
     {
         $seed = str_shuffle(time() + microtime());
         $_SESSION['seed'] = $seed;
-        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY RAND($seed) LIMIT 0,$num");
+        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY RAND($seed) LIMIT 0, $num");
 
         return Database::fetchAll();
     }
