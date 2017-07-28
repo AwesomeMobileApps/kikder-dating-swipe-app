@@ -7,10 +7,12 @@ class Kik_Model
 
     public function changePicture($user_id, $picture)
     {
-        Database::query("UPDATE users SET `user_picture` = :picture WHERE `user_id` = :user", array(
-            ':picture' => $picture,
+        $binds = [
+            ':avatar' => $picture,
             ':user' => $user_id
-        ));
+        ];
+
+        Database::query("UPDATE users SET user_avatar = :avatar WHERE user_id = :user", $binds);
     }
 
     public function countUsers()
