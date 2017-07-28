@@ -19,7 +19,7 @@ class User
     }
 
     /**
-     * @return string
+     * @return string|void
      */
     public static function userName()
     {
