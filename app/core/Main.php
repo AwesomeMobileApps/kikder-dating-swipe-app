@@ -14,14 +14,14 @@ class Main
     }
 
     /**
-     * Stores the config in a property.
+     * Stores the config values into a property.
      *
      * @return void
      */
     public static function store()
     {
         if (empty(static::$_config)) {
-            include_once APP_PATH . 'config.php';
+            include_once APP_PATH . 'config/config.php';
             static::$_config = $config;
         }
     }
