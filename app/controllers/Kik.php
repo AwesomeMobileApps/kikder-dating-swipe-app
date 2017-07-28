@@ -225,7 +225,7 @@ class Kik extends BaseController
                 $this->sendUserDetailsToLikedUser($userData, $likedUserData);
             }
 
-            include('templates/append.php');
+            include 'templates/append.php';
         }
     }
 
