@@ -2,6 +2,8 @@
 
 class Kik_Model
 {
+    const MAX_RECENT_USERS = 16;
+
     /** @var string Table name */
     protected $table = 'users';
 
@@ -137,9 +139,14 @@ class Kik_Model
         return Database::fetch();
     }
 
-    public function getRecentUsers()
+    /**
+     * @param int $num
+     *
+     * @return stdClass
+     */
+    public function getRecentUsers($num = self::MAX_RECENT_USERS)
     {
-        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY user_id DESC LIMIT 16");
+        Database::query("SELECT * FROM users WHERE user_avatar <> '' ORDER BY user_id DESC LIMIT 0, $num");
 
         return Database::fetchAll();
     }
