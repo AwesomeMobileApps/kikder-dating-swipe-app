@@ -9,15 +9,15 @@
 
 CREATE TABLE users (
   user_id int(11) NOT NULL AUTO_INCREMENT,
-  user_name varchar(175) NOT NULL,
   user_email varchar(175) NOT NULL,
+  user_name varchar(175) NOT NULL,
   user_firstname varchar(175) NOT NULL,
   user_lastname varchar(75) NOT NULL,
   user_password varchar(175) NOT NULL,
-  user_bio varchar(500) NOT NULL,
-  user_picture varchar(175) NOT NULL,
-  user_gender int(11) NOT NULL,
-  user_uid varchar(75) NOT NULL,
+  user_description varchar(500) NOT NULL,
+  user_avatar varchar(175) NOT NULL,
+  user_gender tinyint(2) unsigned NOT NULL,
+  user_uid varchar(75) NOT NULL, -- Unique ID (used for generating reset password token, ..)
   PRIMARY KEY (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -2,6 +2,7 @@
 
 define('APP_PATH', __DIR__ . DIRECTORY_SEPARATOR);
 
+require 'config/site.php';
 require 'helpers.php';
 require 'core/Route.php';
 require 'core/Database.php';

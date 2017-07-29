@@ -2,6 +2,8 @@
 
 class User
 {
+    const KIK_AVATAR_URL = 'https://www.kik.me/u/';
+
     /** @var stdClass The user fields */
     private static $_userData;
 
@@ -17,7 +19,7 @@ class User
     }
 
     /**
-     * @return string
+     * @return string|void
      */
     public static function userName()
     {
@@ -40,7 +42,7 @@ class User
     public static function userPicture()
     {
         if (static::loggedIn()) {
-            return static::$_userData->user_picture;
+            return static::$_userData->user_avatar;
         }
     }
 
@@ -61,8 +63,7 @@ class User
      */
     public static function getAvatar($kikUsername)
     {
-
-        $url = 'https://www.kik.me/u/' . $kikUsername;
+        $url = self::KIK_AVATAR_URL . $kikUsername;
         $opts = array('http' => array('header' => "User-Agent:MyAgent/1.0\r\n"));
         $context = stream_context_create($opts);
         $html = file_get_contents($url, false, $context);

@@ -14,9 +14,7 @@ class Player_Model
      */
     public function modelGetData($select, $column, $value)
     {
-        Database::query('SELECT ' . $select . ' FROM `' . $this->table . '` WHERE `' . $column . '` = :value', array(
-            ':value' => $value
-        ));
+        Database::query('SELECT ' . $select . ' FROM ' . $this->table . ' WHERE ' . $column . ' = :value', [':value' => $value]);
 
         return Database::fetch();
     }
@@ -24,15 +22,25 @@ class Player_Model
     /**
      * @param $dribbbleId
      * @param $fullName
-     * @param $picture
+     * @param $avatar
      * @param $permission
      * @param $username
      * @param $code
      */
-    public function createPlayer($dribbbleId, $fullName, $picture, $permission, $username, $code)
+    public function createPlayer($dribbbleId, $fullName, $avatar, $permission, $username, $code)
     {
-        Database::query("INSERT INTO `users` (user_token,user_name, can_upload_shot, user_dribbble, user_picture, user_dribbble_id) VALUES(
-            '$code', '$fullName', $permission', '$username', '$picture','$dribbbleId'
-        )");
+        $sqlQuery = "INSERT INTO users (user_token, user_name, can_upload_shot, user_dribbble, user_avatar, user_dribbble_id) 
+          VALUES(:core, :fullName, :permission, :username, :avatar, :dribbbleId)";
+
+        $binds = [
+            ':core' => $code,
+            ':fullName' => $fullName,
+            ':permission' => $permission,
+            ':username' => $username,
+            ':avatar' => $avatar,
+            ':dribbbleId' => $dribbbleId
+        ];
+
+        Database::query($sqlQuery, $binds);
     }
 }

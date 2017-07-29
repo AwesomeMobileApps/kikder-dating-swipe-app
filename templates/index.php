@@ -66,7 +66,7 @@
         <h2>Latest Users</h2>
         <?php foreach ($recent as $luser): ?>
             <div class="avatar">
-                <img src="<?php echo $luser->user_picture; ?>">
+                <img src="<?php echo $luser->user_avatar; ?>">
             </div>
         <?php endforeach; ?>
     </div>
