@@ -50,12 +50,17 @@ class Route
                         exit;
                     }
                 }
-            } else {
-                // TODO From Kik ctrl, call a nice 404 page method
-                header('HTTP/1.1 404 Not Found');
-                echo 'Page Not Found!';
-                exit;
             }
         }
+        // If didn't return a found method, we display the 404 page
+        $this->display404();
+    }
+
+    private function display404()
+    {
+        // TODO From Kik ctrl, call a nice 404 page method
+        header('HTTP/1.1 404 Not Found');
+        echo 'Page Not Found!';
+        exit;
     }
 }
