@@ -132,6 +132,13 @@ class Kik_Model
         return $this->modelGetData('*', 'user_id', (int)$userId);
     }
 
+    /**
+     * @param string $select
+     * @param string $column
+     * @param string $value
+     *
+     * @return stdClass
+     */
     public function modelGetData($select, $column, $value)
     {
         Database::query('SELECT ' . $select . ' FROM ' . $this->table . ' WHERE ' . $column . ' = :value', [':value' => $value]);
