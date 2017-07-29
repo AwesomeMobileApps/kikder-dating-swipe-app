@@ -87,7 +87,7 @@ class Kik_Model
             ':password' => $pass,
             ':email' => $email
         ];
-        Database::query("UPDATE users SET user_email = :email, user_password = :password, user_fake = '0' WHERE user_name = :kik", $binds);
+        Database::query("UPDATE users SET user_email = :email, user_password = :password, user_fake = 0 WHERE user_name = :kik", $binds);
     }
 
     /**

@@ -16,7 +16,8 @@ CREATE TABLE users (
   user_password varchar(175) NOT NULL,
   user_description varchar(500) NOT NULL,
   user_avatar varchar(175) NOT NULL,
-  user_gender tinyint(2) unsigned NOT NULL,
+  user_gender tinyint(1) unsigned NOT NULL,
+  user_fake tinyint(1) unsigned NOT NULL DEFAULT 0,
   user_uid varchar(75) NOT NULL, -- Unique ID (used for generating reset password token, ..)
   PRIMARY KEY (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

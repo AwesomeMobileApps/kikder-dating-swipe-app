@@ -37,7 +37,7 @@ class Kik extends BaseController
             $kikname = Input::post('kik_username');
             $email = Input::post('user_email');
             $password = Input::post('user_pass');
-            $gender = Input::post('user_gender');
+            $gender = (int) Input::post('user_gender');
 
             $checkEmail = $this->modelFunction('modelGetData', array('*', 'user_email', $email));
             $checkKik = $this->modelFunction('modelGetData', array('*', 'user_name', $kikname));
@@ -53,7 +53,7 @@ class Kik extends BaseController
                 $error = 'That Email is taken';
             } elseif (!empty($checkKik) && $checkKik->user_fake == 0) {
                 $error = 'Username has been taken';
-            } elseif (!empty($checkKik) && $checkKik->user_fake == '1') {
+            } elseif (!empty($checkKik) && $checkKik->user_fake == 1) {
                 $fake = 1;
             }
 
