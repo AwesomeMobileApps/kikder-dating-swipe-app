@@ -46,9 +46,15 @@ class Route
                         }
                         return call_user_func_array(array($class, $classFunction), $params);
                     } else {
-                        die('Function <b>' . $classFunction . '</b> was not found in the class <b>' . $this->_class[0] . '</b>');
+                        echo 'Function <b>' . $classFunction . '</b> was not found in the class <b>' . $this->_class[0] . '</b>';
+                        exit;
                     }
                 }
+            } else {
+                // TODO From Kik ctrl, call a nice 404 page method
+                header('HTTP/1.1 404 Not Found');
+                echo 'Page Not Found!';
+                exit;
             }
         }
     }
