@@ -50,7 +50,7 @@ class Blog_Model
      */
     public function addShot($imageUrl, $name, $user_id)
     {
-        $sqlQuery = 'INSERT INTO ' . $this->table . ' (shot_title, shot_user, shot_image, shot_time) 
+        $sqlQuery = 'INSERT INTO ' . $this->table . ' (shot_title, shot_user, shot_image, shot_time)
             VALUES(:name, :user_id, :image_url, :title)';
         $binds = [
             ':name' => $name,
@@ -74,7 +74,7 @@ class Blog_Model
 
     public function initShot($shot_slug, $shot_user, $shot_image, $shot_time)
     {
-        $sqlQuery = 'INSERT INTO ' . $this->table . ' (shot_slug, shot_user, shot_image, shot_time) 
+        $sqlQuery = 'INSERT INTO ' . $this->table . ' (shot_slug, shot_user, shot_image, shot_time)
             VALUES(:shot_slug, :shot_user, :shot_image, :shot_time)';
         $binds = [
             ':shot_slug' => $shot_slug,
@@ -89,7 +89,7 @@ class Blog_Model
     public function finishShot($shot_id, $shot_title, $shot_slug, $shot_tags, $shot_desc)
     {
         $sqlQuery = 'UPDATE ' . $this->table . '
-            SET shot_title = :shot_title, shot_slug = :shot_slug, shot_desc = :shot_desc, shot_tags = :shot_tags, shot_show = 1 
+            SET shot_title = :shot_title, shot_slug = :shot_slug, shot_desc = :shot_desc, shot_tags = :shot_tags, shot_show = 1
             WHERE shot_id = :shot_id';
         $binds = [
             ':shot_title' => $shot_title,

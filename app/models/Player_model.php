@@ -29,7 +29,7 @@ class Player_Model
      */
     public function createPlayer($dribbbleId, $fullName, $avatar, $permission, $username, $code)
     {
-        $sqlQuery = "INSERT INTO users (user_token, user_name, can_upload_shot, user_dribbble, user_avatar, user_dribbble_id) 
+        $sqlQuery = "INSERT INTO users (user_token, user_name, can_upload_shot, user_dribbble, user_avatar, user_dribbble_id)
           VALUES(:core, :fullName, :permission, :username, :avatar, :dribbbleId)";
 
         $binds = [
