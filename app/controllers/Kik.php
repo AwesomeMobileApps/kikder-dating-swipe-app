@@ -229,7 +229,14 @@ class Kik extends BaseController
         }
     }
 
-    protected function sendUserDetailsToLikedUser(stdClass $userData, stdClass $likedUser)
+    public function notFound()
+    {
+        header('HTTP/1.1 404 Not Found');
+
+        View::create('notFound', 'Page Not Found');
+    }
+
+    private function sendUserDetailsToLikedUser(stdClass $userData, stdClass $likedUser)
     {
         $userPhoto = $userData->user_avatar;
 
