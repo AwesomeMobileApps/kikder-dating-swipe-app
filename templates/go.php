@@ -20,7 +20,6 @@
             Swipe <strong class="green">right</strong> if you'd Kik, or <strong class="red">left</strong> if you won't!
         </div>
         <div id="container">
-
             <div class="row">
                 <div id="tinderslide">
                     <ul>
