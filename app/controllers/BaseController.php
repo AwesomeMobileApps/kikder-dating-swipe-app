@@ -8,7 +8,7 @@ class BaseController
     public function loadModel($name)
     {
         $modelFile = $this->root . $name . '_model.php';
-        include_once($modelFile);
+        require $modelFile;
         $this->name = $name;
     }
 
