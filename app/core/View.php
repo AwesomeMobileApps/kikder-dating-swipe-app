@@ -33,6 +33,7 @@ class View
     public static function admin($view, $title = '', $paritals = 1, array $data = array())
     {
         extract($data);
+
         if (!$paritals == 1) {
             include APP_PATH . 'admin/templates/' . $view . '.php';
         } else {

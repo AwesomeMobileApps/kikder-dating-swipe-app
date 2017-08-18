@@ -17,11 +17,11 @@ function asset_url($var = '') {
 }
 
 function redirect($url) {
-    header('Location: .' . $url);
-}
-
-function error($type) {
-    echo $type;
+    if (strpos($url, 'http') === false) {
+        $url = SITE_URL . $url;
+    }
+    header('Location: ' . $url);
+    exit;
 }
 
 function clean($key) {
