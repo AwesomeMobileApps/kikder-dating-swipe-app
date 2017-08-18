@@ -10,19 +10,18 @@ class View
     public static function create($view, $title = '', array $data = array())
     {
         extract($data);
-        $template_url = 'templates/';
 
-        include_once $template_url . 'header.php';
+        include 'templates/header.php';
 
-        $file = $template_url . $view . '.php';
+        $file = 'templates/' . $view . '.php';
         if (is_file($file)) {
-            include_once $template_url . $view . '.php';
+            include $file;
         } else {
             echo 'Could not find file: <b>' . $file . '</b>';
             exit;
         }
 
-        include_once $template_url . 'footer.php';
+        include'templates/footer.php';
     }
 
     /**
