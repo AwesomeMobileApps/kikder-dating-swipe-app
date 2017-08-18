@@ -32,7 +32,7 @@ class Main
      * @param  string $key The key
      * @param  string $secondKey Optional second key
      *
-     * @return string|boolean    The value
+     * @return string|bool    The value
      */
     public static function get($key, $secondKey = '')
     {
@@ -47,11 +47,11 @@ class Main
      * Returns the excerpt.
      *
      * @param  string $str The incoming text
-     * @param  intval $startPost Optional start pos
-     * @param  intval $maxLength Optional max length
+     * @param  int $startPos Optional start pos
+     * @param  int $maxLength Optional max length
      * @param  string $append Optional append
      *
-     * @return string|boolean    Excerpt
+     * @return string|bool Excerpt
      */
     public static function excerpt($str, $startPos = 0, $maxLength = 250, $append = '...')
     {
