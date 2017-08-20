@@ -11,7 +11,6 @@ class Hash
      *
      * @return string         The hashed string
      */
-
     public static function generate($string)
     {
         $rounds = sprintf('%02d', 10);
