@@ -95,19 +95,19 @@ class Kik extends BaseController
 
             if (empty($error)) {
                 $from = ADMIN_EMAIL;
-                $subject = "Kik or not | New Password";
+                $subject = SITE_NAME . ' | New Password';
                 $password = Hash::generate($rand);
                 $headers = "From: " . $from . "\r\n";
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
                 $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-                $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
+                $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">' . SITE_NAME . '</a>';
                 $message .= '</div>';
                 $message .= 'Hey' . $getData->user_name . '! We have generated you a password!<br />';
                 $message .= '<code>' . $rand . '</code>';
                 $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
-                $message .= '&copy; Kik or not</a><br /><br />';
+                $message .= '&copy; ' . SITE_NAME . '</a><br /><br />';
                 $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
                 $message .= '</div>';
                 $this->modelFunction('forgotDone', array($id, $getData->user_email, $password));
@@ -135,18 +135,18 @@ class Kik extends BaseController
                     $uid = mt_rand(0, 99) . time();
                     $uid = str_shuffle($uid);
                     $from = ADMIN_EMAIL;
-                    $subject = "Kik or not | Request Password Change";
+                    $subject = SITE_NAME . ' | Request Password Change';
                     $headers = "From: " . $from . "\r\n";
                     $headers .= "MIME-Version: 1.0\r\n";
                     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                     $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-                    $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
+                    $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">' . SITE_NAME . '</a>';
                     $message .= '</div>';
                     $message .= 'Hey' . $userData->user_name . '! If you forgot your password, please continue with the link below! <br />';
                     $message .= 'Otherwise, please just delete this message.<br /><br />';
                     $message .= '<a href="' . SITE_URL . 'forgot?id=' . $uid . '" class="background-color: #82bc23;color: #FFF;padding: 18px 40px;font-size: 16px;border-radius: 40px;">Click here to get a new password!</a>';
                     $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
-                    $message .= '&copy; Kik or not</a><br /><br />';
+                    $message .= '&copy; ' . SITE_NAME . '</a><br /><br />';
                     $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
                     $message .= '</div>';
                     $this->modelFunction('forgotAdd', array($uid, $email));
@@ -249,12 +249,12 @@ class Kik extends BaseController
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $message = '<div style="width: 100%; background-color: #253036; padding: 20px; margin-bottom: 20px;">';
-        $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">Kik or not</a>';
+        $message .= '<a href="' . SITE_URL . '" style="color: #7c8b96;">' . SITE_NAME . '</a>';
         $message .= '</div>';
         $message .= 'Hey' . $likedUser->user_name . '! ' . $userData->user_name . ' likes your photo and so interested to meet you.<br />';
         $message .= '<a href="mailto:' . $from . '"><img src="' . $userPhoto . '" alt="' . $userData->user_name . '" title="' . $userData->user_name . ' wants to meet you." /></a>';
         $message .= '<div style="margin-top: 20px; text-align: center; font-size: 12px;">';
-        $message .= '&copy; Kik or not</a><br /><br />';
+        $message .= '&copy; ' . SITE_NAME . '</a><br /><br />';
         $message .= '<small>You are receiving this email because you registered to "' . SITE_URL . '" with this email address.</small>';
         $message .= '</div>';
 
