@@ -8,12 +8,8 @@ function site_url($var = '') {
     return SITE_URL;
 }
 
-function asset_url($var = '') {
-    if (!empty($var)) {
-        return SITE_URL . $var;
-    }
-
-    return SITE_URL . 'assets/';
+function asset_url($var) {
+    return SITE_URL . 'assets/' . $var;
 }
 
 function redirect($url) {
