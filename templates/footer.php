@@ -35,7 +35,7 @@
                     $('.rotate-right').remove();
                 }, 500); // <-- time in milliseconds
                 $.ajax({
-                    url: "./loadUsers",
+                    url: "<?php echo site_url('loadUsers') ?>",
                     type: "POST",
                     data: {'seed': 1, 'like_id': match_id},
                     dataType: "HTML",
@@ -50,7 +50,7 @@
                     $('.rotate-left').hide();
                 }, 500); // <-- time in milliseconds
                 $.ajax({
-                    url: "./loadUsers",
+                    url: "<?php echo site_url('loadUsers') ?>",
                     type: "POST",
                     data: {'seed': 1},
                     dataType: "HTML",
