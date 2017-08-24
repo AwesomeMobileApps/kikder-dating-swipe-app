@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel">
-                    <h4><img src="assets/img/logo-dark.png"></h4>
+                    <h4><img src="<?php echo asset_url('img/logo-dark.png') ?>"></h4>
                     <hr/>
                     <?php echo $error; ?>
                     <form class="form" action="<?php echo site_url('create'); ?>" method="post">

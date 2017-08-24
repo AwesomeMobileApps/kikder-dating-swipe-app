@@ -8,7 +8,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<script src="<?php echo asset_url('js/bootstrap.min.js') ?>"></script>
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>$(document).bind("mobileinit", function () {
         $.extend($.mobile, {autoInitializePage: false})

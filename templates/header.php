@@ -8,8 +8,8 @@
     <meta name="description" content="Find Kik users with a Tinder way!">
     <meta name="keywords" content="men, girl, dating, flirt,tinder, kik, usernames, kik users, users">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo asset_url('css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo asset_url('css/style.css') ?>">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php include 'analytics.inc.php' ?>
 
