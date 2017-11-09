@@ -5,6 +5,9 @@ composer.phar
 *.log
 *.tmp
 
+# PhpStorm
+/.idea
+
 ## Gettext ##
 *.mo
 
