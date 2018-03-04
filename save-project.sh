@@ -10,3 +10,5 @@ function save-project() {
 save-project git@bitbucket.org:pH_7/kikornot.git
 save-project git@gitlab.com:pH-7/kikder-dating-swipe-app.git
 save-project git@github.com:AwesomeMobileApps/kikder-dating-swipe-app.git
+
+echo "Yaaay! That's done :)"
