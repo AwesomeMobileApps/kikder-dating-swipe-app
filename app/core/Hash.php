@@ -51,8 +51,8 @@ class Hash
             return false;
         }
 
-        $result = $knownString ^ $userString;
         $return = 0;
+        $result = $knownString ^ $userString;
         $total = strlen($result) - 1;
         for ($i = $total; $i >= 0; $i--) {
             $return |= ord($result[$i]);
