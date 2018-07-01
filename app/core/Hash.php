@@ -44,13 +44,13 @@ class Hash
     {
         if (!function_exists('hash_equals')) {
             // For PHP < 5.6
-            function hash_equals($str1, $str2)
+            function hash_equals($knownString, $userString)
             {
-                if(strlen($str1) !== strlen($str2)) {
+                if(strlen($knownString) !== strlen($userString)) {
                     return false;
                 }
 
-                $result = $str1 ^ $str2;
+                $result = $knownString ^ $userString;
                 $return = 0;
                 $total = strlen($result) - 1;
                 for($i = $total; $i >= 0; $i--) {
