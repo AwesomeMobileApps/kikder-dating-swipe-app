@@ -42,7 +42,7 @@ class Hash
      */
     private static function hashEquals($knownString, $userString)
     {
-        if(!function_exists('hash_equals')) {
+        if (!function_exists('hash_equals')) {
             // For PHP < 5.6
             function hash_equals($str1, $str2)
             {
