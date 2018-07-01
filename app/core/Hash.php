@@ -42,20 +42,22 @@ class Hash
      */
     private static function hashEquals($knownString, $userString)
     {
-        if (!function_exists('hash_equals')) {
-            // For PHP < 5.6
-            if (strlen($knownString) !== strlen($userString)) {
-                return false;
-            }
-
-            $result = $knownString ^ $userString;
-            $return = 0;
-            $total = strlen($result) - 1;
-            for ($i = $total; $i >= 0; $i--) {
-                $return |= ord($result[$i]);
-            }
-
-            return !$return;
+        if (function_exists('hash_equals')) {
+            return hash_equals($knownString, $userString);
         }
+
+        // For PHP < 5.6
+        if (strlen($knownString) !== strlen($userString)) {
+            return false;
+        }
+
+        $result = $knownString ^ $userString;
+        $return = 0;
+        $total = strlen($result) - 1;
+        for ($i = $total; $i >= 0; $i--) {
+            $return |= ord($result[$i]);
+        }
+
+        return !$return;
     }
 }
