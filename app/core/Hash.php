@@ -46,7 +46,7 @@ class Hash
             // For PHP < 5.6
             function hash_equals($str1, $str2)
             {
-                if(strlen($str1) != strlen($str2)) {
+                if(strlen($str1) !== strlen($str2)) {
                     return false;
                 }
 
