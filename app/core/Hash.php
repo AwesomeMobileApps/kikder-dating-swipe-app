@@ -7,9 +7,9 @@ class Hash
     /**
      * Hashes a string.
      *
-     * @param  string $string The string to hash
+     * @param string $string The string to hash.
      *
-     * @return string         The hashed string
+     * @return string The hashed string.
      */
     public static function generate($string)
     {
