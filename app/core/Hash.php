@@ -22,14 +22,14 @@ class Hash
     /**
      * Compares a string to a hash.
      *
-     * @param string $string The string
-     * @param string $hash The Hash
+     * @param string $input The raw string.
+     * @param string $existingHash The hash.
      *
      * @return bool Does it match?
      */
-    public static function compare($string, $hash)
+    public static function compare($input, $existingHash)
     {
-        $existingHash = crypt($string, $hash);
+        $hash = crypt($input, $existingHash);
 
         return self::hashEquals($existingHash, $hash);
     }
