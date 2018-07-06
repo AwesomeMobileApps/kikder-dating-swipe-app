@@ -70,9 +70,8 @@ class Kik extends BaseController
                     exit();
                 }
             }
-
-
         }
+
         return View::create('register', 'Create an account', array(
             'error' => $error
         ));
@@ -119,7 +118,6 @@ class Kik extends BaseController
                 'error' => $error,
                 'success' => $success
             ));
-
         } else {
             if (Input::post('forgot')) {
 
@@ -195,6 +193,7 @@ class Kik extends BaseController
                 exit();
             }
         }
+
         return View::create('signin', 'Sign in', array(
             'error' => $error
         ));

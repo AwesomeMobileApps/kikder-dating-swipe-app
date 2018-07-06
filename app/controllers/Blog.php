@@ -2,7 +2,6 @@
 
 class Blog extends BaseController
 {
-
     /*
      * Start up the controller
      */
@@ -40,5 +39,4 @@ class Blog extends BaseController
             'posts' => $posts
         ));
     }
-
 }
