@@ -4,7 +4,9 @@
 
 3. Open /app/config/config.php and replace with your database information.
 
-4. Visit your website by going to your URL e.g. http://your-own-kikornot.com
+4. Open templates/register.php find <div class="g-recaptcha" data-sitekey=" change key to your own from https://www.google.com/recaptcha
+
+5. Visit your website by going to your URL e.g. http://your-own-kikornot.com
 
 
 Enjoy!
