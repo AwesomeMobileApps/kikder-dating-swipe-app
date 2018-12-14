@@ -36,7 +36,7 @@
                                    class="form-control login-control">
                         </div>
                         <div class="text-center">
-                            <div class="g-recaptcha" data-sitekey="6LeRGxcTAAAAAO_qGJGcQs6aPu8kbcELfIIlqBnA"></div>
+                            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_PUBLIC_KEY ?>"></div>
                         </div>
                         <br/>
                         <input type="submit" name="createAcc" value="Create my account!" class="btn btn-kik btn-block">
