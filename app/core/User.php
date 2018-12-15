@@ -10,7 +10,7 @@ class User
     public static function store()
     {
         if (Main::loggedIn()) {
-            Database::query('SELECT * FROM `users` WHERE `user_id` = :userid', array(
+            Database::query('SELECT * FROM users WHERE user_id = :userid', array(
                 ':userid' => Session::showCookie('userId')
             ));
 
