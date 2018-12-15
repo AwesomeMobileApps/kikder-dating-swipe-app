@@ -16,3 +16,8 @@ A great, simple, and open source web app to date and communicate very easy with 
 ## Ambitious Dating Business?
 
 If you are looking for a turnkey solution, a more powerful dating builder... I can advise you to look for [pH7CMS App Builder](https://github.com/pH7Software/pH7-Social-Dating-CMS).
+
+
+## Contact Me?
+
+Feel free to give me a shout at *hi `AT` ph7 `D0T` me* 😊
