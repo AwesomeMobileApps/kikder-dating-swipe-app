@@ -57,7 +57,9 @@ class User
     }
 
     /**
-     * @param string $kikUsername
+     * Retrieve user's avatar from their Kik's account.
+     *
+     * @param string $kikUsername The user's Kik username.
      *
      * @return string
      */
