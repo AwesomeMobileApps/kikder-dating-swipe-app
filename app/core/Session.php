@@ -38,18 +38,22 @@ class Session
     }
 
     /**
+     * Set a cookie.
+     *
      * @param string $name The cookie name.
      * @param string $value The value of the cookie.
      */
-    public static function setacookie($name, $value)
+    public static function setCookie($name, $value)
     {
         setcookie($name, $value, time() + 60 * 60 * 24 * 365, '/');
     }
 
     /**
+     * Remove a cookie.
+     *
      * @param string $name The cookie name.
      */
-    public static function removeacookie($name)
+    public static function removeCookie($name)
     {
         setcookie($name, '', time() - 60 * 60 * 24 * 365, '/');
     }

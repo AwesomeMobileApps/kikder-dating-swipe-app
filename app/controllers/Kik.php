@@ -187,8 +187,8 @@ class Kik extends BaseController
                  */
                 $picture = User::getAvatar($userData->user_name);
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
-                Session::setacookie('loggedIn', true);
-                Session::setacookie('userId', $userData->user_id);
+                Session::setCookie('loggedIn', true);
+                Session::setCookie('userId', $userData->user_id);
                 header('Location: ' . site_url());
                 exit();
             }
@@ -202,8 +202,8 @@ class Kik extends BaseController
     public function signOut()
     {
         if (Main::loggedIn()) {
-            Session::removeacookie('loggedIn');
-            Session::removeacookie('userId');
+            Session::removeCookie('loggedIn');
+            Session::removeCookie('userId');
         }
 
         header('Location: ./');
