@@ -31,7 +31,7 @@ class Input
      */
     public static function post($key)
     {
-        return isset($_POST[$key]) ? $_POST[$key] : FALSE;
+        return isset($_POST[$key]) ? $_POST[$key] : false;
     }
 
     /**
@@ -43,7 +43,7 @@ class Input
      */
     public static function get($key)
     {
-        return isset($_GET[$key]) ? $_GET[$key] : FALSE;
+        return isset($_GET[$key]) ? $_GET[$key] : false;
     }
 
     /**

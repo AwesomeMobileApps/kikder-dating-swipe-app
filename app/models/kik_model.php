@@ -111,7 +111,7 @@ class Kik_Model
     /**
      * @param int $num
      *
-     * @return stdClass
+     * @return array
      */
     public function getUsers($num)
     {
@@ -149,7 +149,7 @@ class Kik_Model
     /**
      * @param int $num
      *
-     * @return stdClass
+     * @return array
      */
     public function getRecentUsers($num = self::MAX_RECENT_USERS)
     {

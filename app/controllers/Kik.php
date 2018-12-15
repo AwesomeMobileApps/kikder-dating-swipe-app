@@ -37,7 +37,7 @@ class Kik extends BaseController
             $kikname = Input::post('kik_username');
             $email = Input::post('user_email');
             $password = Input::post('user_pass');
-            $gender = (int) Input::post('user_gender');
+            $gender = (int)Input::post('user_gender');
 
             $checkEmail = $this->modelFunction('modelGetData', array('*', 'user_email', $email));
             $checkKik = $this->modelFunction('modelGetData', array('*', 'user_name', $kikname));
