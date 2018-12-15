@@ -82,7 +82,7 @@ class Database
     /**
      * Returns all rows
      *
-     * @return stdClass The rows as an object.
+     * @return array The rows as an object.
      */
     public static function fetchAll()
     {
