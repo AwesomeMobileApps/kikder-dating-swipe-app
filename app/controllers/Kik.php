@@ -66,8 +66,7 @@ class Kik extends BaseController
                 } else {
                     // Create new account
                     $uid = $this->modelFunction('createAccount', array($kikname, $email, $gender, $password));
-                    header("Location: " . site_url() . "/signin?msg=success");
-                    exit();
+                    redirect('signin?msg=success');
                 }
             }
         }
@@ -86,8 +85,7 @@ class Kik extends BaseController
             $getData = $this->modelFunction('modelGetData', array('*', 'user_uid', $id));
             $rand = substr(md5(microtime()), mt_rand(0, 26), 5);
             if (empty($id)) {
-                header("Location: " . site_url());
-                exit();
+                redirect(site_url());
             } elseif (empty($getData)) {
                 $error = 'Looks like that link has expired...';
             }
@@ -189,8 +187,7 @@ class Kik extends BaseController
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
                 Session::setCookie('loggedIn', true);
                 Session::setCookie('userId', $userData->user_id);
-                header('Location: ' . site_url());
-                exit();
+                redirect(site_url());
             }
         }
 
@@ -206,8 +203,7 @@ class Kik extends BaseController
             Session::removeCookie('userId');
         }
 
-        header('Location: ./');
-        exit;
+        redirect(site_url());
     }
 
     public function loadUsers()
