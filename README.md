@@ -20,4 +20,4 @@ If you are looking for a turnkey solution, a more powerful dating builder... I c
 
 ## Contact Me?
 
-Feel free to give me a shout at *hi `AT` ph7 `D0T` me* 😊
+Feel free to give me a shout at 📮 *hi `AT` ph7 `D0T` me* 😊
