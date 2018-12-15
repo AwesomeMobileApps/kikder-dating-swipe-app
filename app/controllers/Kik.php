@@ -85,7 +85,7 @@ class Kik extends BaseController
             $getData = $this->modelFunction('modelGetData', array('*', 'user_uid', $id));
             $rand = substr(md5(microtime()), mt_rand(0, 26), 5);
             if (empty($id)) {
-                redirect(site_url());
+                redirect();
             } elseif (empty($getData)) {
                 $error = 'Looks like that link has expired...';
             }
@@ -187,7 +187,7 @@ class Kik extends BaseController
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
                 Session::setCookie('loggedIn', true);
                 Session::setCookie('userId', $userData->user_id);
-                redirect(site_url());
+                redirect();
             }
         }
 
@@ -203,7 +203,7 @@ class Kik extends BaseController
             Session::removeCookie('userId');
         }
 
-        redirect(site_url());
+        redirect();
     }
 
     public function loadUsers()

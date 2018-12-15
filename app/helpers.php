@@ -14,11 +14,16 @@ function asset_url($var)
     return SITE_URL . 'assets/' . $var;
 }
 
-function redirect($url)
+function redirect($url = null)
 {
+    if ($url === null) {
+        $url = SITE_URL;
+    }
+
     if (strpos($url, 'http') === false) {
         $url = SITE_URL . $url;
     }
+
     header('Location: ' . $url);
     exit;
 }
