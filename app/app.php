@@ -33,5 +33,3 @@ Database::connect(Main::get('db'));
 User::store();
 
 $route->run(); // Last one, run the URI router
-
-
