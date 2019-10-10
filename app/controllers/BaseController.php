@@ -2,8 +2,8 @@
 
 class BaseController
 {
-    public $root = './app/models/';
-    public $name;
+    private $root = './app/models/';
+    private $name;
 
     public function loadModel($name)
     {
