@@ -46,14 +46,14 @@ class Hash
             // For PHP < 5.6
             function hash_equals($knownString, $userString)
             {
-                if(strlen($knownString) !== strlen($userString)) {
+                if (strlen($knownString) !== strlen($userString)) {
                     return false;
                 }
 
                 $result = $knownString ^ $userString;
                 $return = 0;
                 $total = strlen($result) - 1;
-                for($i = $total; $i >= 0; $i--) {
+                for ($i = $total; $i >= 0; $i--) {
                     $return |= ord($result[$i]);
                 }
 

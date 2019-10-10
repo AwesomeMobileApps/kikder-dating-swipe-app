@@ -29,27 +29,27 @@ class Main
     /**
      * Returns a config value.
      *
-     * @param  string $key The key
-     * @param  string $secondKey Optional second key
+     * @param string $key The key
+     * @param string $secondKey Optional second key
      *
      * @return string|bool    The value
      */
     public static function get($key, $secondKey = '')
     {
         if (empty($secondKey)) {
-            return isset(static::$_config[$key]) ? static::$_config[$key] : FALSE;
+            return isset(static::$_config[$key]) ? static::$_config[$key] : false;
         } else {
-            return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : FALSE;
+            return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : false;
         }
     }
 
     /**
      * Returns the excerpt.
      *
-     * @param  string $str The incoming text
-     * @param  int $startPos Optional start pos
-     * @param  int $maxLength Optional max length
-     * @param  string $append Optional append
+     * @param string $str The incoming text
+     * @param int $startPos Optional start pos
+     * @param int $maxLength Optional max length
+     * @param string $append Optional append
      *
      * @return string|bool Excerpt
      */
