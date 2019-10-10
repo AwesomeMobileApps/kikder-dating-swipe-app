@@ -2,7 +2,6 @@
 
 class Blog extends BaseController
 {
-
     /*
      * Start up the controller
      */
