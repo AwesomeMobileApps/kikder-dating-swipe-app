@@ -38,9 +38,9 @@ class Main
     {
         if (empty($secondKey)) {
             return isset(static::$_config[$key]) ? static::$_config[$key] : false;
-        } else {
-            return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : false;
         }
+
+        return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : false;
     }
 
     /**
