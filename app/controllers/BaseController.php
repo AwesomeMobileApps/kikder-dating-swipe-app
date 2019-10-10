@@ -2,12 +2,12 @@
 
 class BaseController
 {
-    private $root = './app/models/';
+    private $modelsPath = './app/models/';
     private $name;
 
     public function loadModel($name)
     {
-        $modelFile = $this->root . $name . '_model.php';
+        $modelFile = $this->modelsPath . $name . '_model.php';
         require $modelFile;
         $this->name = $name;
     }
