@@ -12,6 +12,12 @@ class BaseController
         $this->name = $name;
     }
 
+    /**
+     * @param string $func
+     * @param array $vars
+     *
+     * @return mixed
+     */
     public function modelFunction($func, array $vars = array())
     {
         $className = $this->name . '_model';
