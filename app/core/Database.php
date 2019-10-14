@@ -18,7 +18,11 @@ class Database
     public static function connect(array $dbDetails = array())
     {
         try {
-            static::$_pdo = new PDO('mysql:host=' . $dbDetails['dbHost'] . ';dbname=' . $dbDetails['dbName'], $dbDetails['dbUser'], $dbDetails['dbPass']);
+            static::$_pdo = new PDO(
+                sprintf('mysql:host=%s;dbname=%s', $dbDetails['dbHost'], $dbDetails['dbName']),
+                $dbDetails['dbUser'],
+                $dbDetails['dbPass']
+            );
             static::$_pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $error) {
             exit('<h1>An unexpected database error occured.</h1>');
@@ -78,7 +82,7 @@ class Database
     /**
      * Returns all rows
      *
-     * @return stdClass The rows as an object.
+     * @return array The rows as an object.
      */
     public static function fetchAll()
     {

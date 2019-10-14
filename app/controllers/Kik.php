@@ -66,13 +66,11 @@ class Kik extends BaseController
                 } else {
                     // Create new account
                     $uid = $this->modelFunction('createAccount', array($kikname, $email, $gender, $password));
-                    header("Location: " . site_url() . "/signin?msg=success");
-                    exit();
+                    redirect('signin?msg=success');
                 }
             }
-
-
         }
+
         return View::create('register', 'Create an account', array(
             'error' => $error
         ));
@@ -87,8 +85,7 @@ class Kik extends BaseController
             $getData = $this->modelFunction('modelGetData', array('*', 'user_uid', $id));
             $rand = substr(md5(microtime()), mt_rand(0, 26), 5);
             if (empty($id)) {
-                header("Location: " . site_url());
-                exit();
+                redirect();
             } elseif (empty($getData)) {
                 $error = 'Looks like that link has expired...';
             }
@@ -119,7 +116,6 @@ class Kik extends BaseController
                 'error' => $error,
                 'success' => $success
             ));
-
         } else {
             if (Input::post('forgot')) {
 
@@ -189,12 +185,12 @@ class Kik extends BaseController
                  */
                 $picture = User::getAvatar($userData->user_name);
                 $this->modelFunction('changePicture', array($userData->user_id, $picture));
-                Session::setacookie('loggedIn', true);
-                Session::setacookie('userId', $userData->user_id);
-                header('Location: ' . site_url());
-                exit();
+                Session::setCookie('loggedIn', true);
+                Session::setCookie('userId', $userData->user_id);
+                redirect();
             }
         }
+
         return View::create('signin', 'Sign in', array(
             'error' => $error
         ));
@@ -203,12 +199,11 @@ class Kik extends BaseController
     public function signOut()
     {
         if (Main::loggedIn()) {
-            Session::removeacookie('loggedIn');
-            Session::removeacookie('userId');
+            Session::removeCookie('loggedIn');
+            Session::removeCookie('userId');
         }
 
-        header('Location: ./');
-        exit;
+        redirect();
     }
 
     public function loadUsers()

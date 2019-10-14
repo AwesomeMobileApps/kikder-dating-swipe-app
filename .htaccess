@@ -1,7 +1,9 @@
-Options -MultiViews -Indexes
-Options +FollowSymLinks
-
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    Options +FollowSymLinks
+
     RewriteEngine On
 
     ## Uncomment "#RewriteBase /" below (remove "#") if the website is installed in a folder, and then add the folder name after the slash "/"

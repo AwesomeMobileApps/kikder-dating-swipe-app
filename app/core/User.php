@@ -10,7 +10,7 @@ class User
     public static function store()
     {
         if (Main::loggedIn()) {
-            Database::query('SELECT * FROM `users` WHERE `user_id` = :userid', array(
+            Database::query('SELECT * FROM users WHERE user_id = :userid', array(
                 ':userid' => Session::showCookie('userId')
             ));
 
@@ -57,7 +57,9 @@ class User
     }
 
     /**
-     * @param string $kikUsername
+     * Retrieve user's avatar from their Kik's account.
+     *
+     * @param string $kikUsername The user's Kik username.
      *
      * @return string
      */

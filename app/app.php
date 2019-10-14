@@ -13,7 +13,8 @@ require 'core/Session.php';
 require 'core/Input.php';
 require 'core/Hash.php';
 
-function autoloadController($className) {
+function autoloadController($className)
+{
     $filename = APP_PATH . 'controllers/' . $className . '.php';
     if (is_readable($filename)) {
         require $filename;
@@ -32,5 +33,3 @@ Database::connect(Main::get('db'));
 User::store();
 
 $route->run(); // Last one, run the URI router
-
-

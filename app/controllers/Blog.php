@@ -39,5 +39,4 @@ class Blog extends BaseController
             'posts' => $posts
         ));
     }
-
 }
