@@ -37,10 +37,10 @@ class Main
     public static function get($key, $secondKey = '')
     {
         if (empty($secondKey)) {
-            return isset(static::$_config[$key]) ? static::$_config[$key] : FALSE;
+            return isset(static::$_config[$key]) ? static::$_config[$key] : false;
         }
 
-        return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : FALSE;
+        return isset(static::$_config[$key][$secondKey]) ? static::$_config[$key][$secondKey] : false;
     }
 
     /**
