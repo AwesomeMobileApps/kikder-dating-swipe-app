@@ -2,14 +2,9 @@
 
 class Blog extends BaseController
 {
-    /*
-     * Start up the controller
-     */
     public function __construct()
     {
-        /*
-         * Load the model for this controller
-         */
+        // Load the model for the blog controller
         $this->loadModel('blog');
     }
 
@@ -31,9 +26,7 @@ class Blog extends BaseController
 
     public function index()
     {
-        /*
-         * Search the Model file for the function
-         */
+        // Search the Model file for the function
         $posts = $this->modelFunction('listPosts');
         View::create('index', 'Draft Index', array(
             'posts' => $posts
