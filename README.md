@@ -13,6 +13,11 @@ A great, simple, and open source web app to date and communicate very easy with 
 * **Database** MySQL/MariaDB 5.0.3 or newer
 
 
+## Installation
+
+Have a look to `installation - instruction.txt` file to know step-by-step how to set it up.
+
+
 ## Ambitious Dating Business?
 
 If you are looking for a turnkey solution, a more powerful dating builder... I can advise you to look for [pH7CMS App Builder](https://github.com/pH7Software/pH7-Social-Dating-CMS).
