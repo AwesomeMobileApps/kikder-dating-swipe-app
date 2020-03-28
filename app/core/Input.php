@@ -25,7 +25,7 @@ class Input
     /**
      * Returns the value of a POST variable.
      *
-     * @param  string $key The key
+     * @param string $key The key
      *
      * @return string|boolean       The value
      */
@@ -37,7 +37,7 @@ class Input
     /**
      * Returns the value of a GET variable.
      *
-     * @param  string $key The key
+     * @param string $key The key
      *
      * @return string|boolean      The value
      */
@@ -49,7 +49,7 @@ class Input
     /**
      * Returns the value of a clean input.
      *
-     * @param  string $key The key
+     * @param string $key The key
      *
      * @return string|boolean      The value
      */

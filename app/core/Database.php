@@ -11,7 +11,7 @@ class Database
     /**
      * Establishes a connection.
      *
-     * @param  array $dbDetails The database details
+     * @param array $dbDetails The database details
      *
      * @return void
      */
@@ -32,9 +32,9 @@ class Database
     /**
      * Prepares a query and executes if applicable.
      *
-     * @param  string $sql The SQL to prepare
-     * @param  array $binds Values to bind to the query
-     * @param  boolean $execute Automatically execute?
+     * @param string $sql The SQL to prepare
+     * @param array $binds Values to bind to the query
+     * @param boolean $execute Automatically execute?
      *
      * @return void
      */
