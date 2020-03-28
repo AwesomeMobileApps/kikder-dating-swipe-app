@@ -34,7 +34,7 @@ class View
     {
         extract($data);
 
-        if (!$paritals == 1) {
+        if ($paritals === 1) {
             include APP_PATH . 'admin/templates/' . $view . '.php';
         } else {
             include APP_PATH . 'admin/templates/header.php';
