@@ -26,3 +26,14 @@ If you are looking for a turnkey solution, a more powerful dating builder... I c
 ## Contact Me?
 
 Feel free to give me a shout at 📮 *hi `AT` ph7 `D0T` me* 😊
+
+
+---
+
+
+![Homepage Kik Tinder Clone, Swipe Profiles](screenshots/kikornot.png)
+
+![Homepage HotOrNot Clone - Profile Swipes](screenshots/kikornot-part2.png)
+
+
+
