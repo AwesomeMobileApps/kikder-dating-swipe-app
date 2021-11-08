@@ -1,6 +1,6 @@
 # 😍 Kikder Dating Swipe App
 
-Kik App, you know..? This app integrates Kik and uses the HotOrNot game and the swiping feature from Tinder.
+Kik App, you know..? This app integrates Kik (from [Kik Messenger](https://en.wikipedia.org/wiki/Kik_Messenger)), uses the HotOrNot game ❤️‍🔥 and the Tinder swipe 🃏
 Kikder uses a custom PHP lightweight MVC framework as well.
 
 A great, simple, and open source web app to date and communicate very easy with anyone!
