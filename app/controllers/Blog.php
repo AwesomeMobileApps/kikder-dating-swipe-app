@@ -5,7 +5,7 @@ class Blog extends BaseController
     public function __construct()
     {
         // Load the model for the blog controller
-        $this->loadModel('blog');
+        $this->loadModel('Blog');
     }
 
     public function viewPost($slug)
