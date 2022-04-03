@@ -1,1 +1,6 @@
+# Exclude development files from distribution
 .github export-ignore
+screenshots export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+save-project.sh export-ignore
