@@ -1,6 +1,6 @@
-1. Update the URL, site name, email and Analytics ID details by editing /app/config/site.php
+1. Open /app/config/site.php and edit the URL, site name, email, Analytics ID, and reCAPTCHA keys.
 
-2. Import database.sql into your MySQL server. Usually, you can just do that with PHPMyAdmin (most of web hostings offer PHPMyAdmin).
+2. Import database.sql into your MySQL server. Usually, you can just do that with PHPMyAdmin (most of the Web hosting out there offer PHPMyAdmin).
 
 3. Open /app/config/config.php and replace with your database information.
 

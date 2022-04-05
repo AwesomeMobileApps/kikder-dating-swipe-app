@@ -10,7 +10,6 @@ A great, simple, and open source web app to date and communicate very easy with 
 ## Requirements
 
 * **Server** PHP 5.4 or newer
-
 * **Database** MySQL/MariaDB 5.0.3 or newer
 
 
