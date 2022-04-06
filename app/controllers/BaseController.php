@@ -8,8 +8,8 @@ class BaseController
     public function loadModel($name)
     {
         $modelFile = $this->modelsPath . $name . '_model.php';
-        require $modelFile;
         $this->name = $name;
+        require $modelFile;
     }
 
     /**

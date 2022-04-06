@@ -4,7 +4,11 @@ class Kik extends BaseController
 {
     public function __construct()
     {
-        $this->loadModel('kik');
+        /**
+         * Load the Kik model,
+         * so we can use it later in this class with `modelFunction`
+         */
+        $this->loadModel('Kik');
     }
 
     public function index()
