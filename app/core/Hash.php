@@ -35,7 +35,7 @@ class Hash
     }
 
     /**
-     * Prevent timing attacking by comparing the two hashes using the same time whether they're equal or not.
+     * Avoid timing attacks by comparing the two hashes using the same time whether they're equal or not.
      *
      * @link https://www.php.net/manual/en/function.hash-equals.php
      *
