@@ -35,6 +35,10 @@ class Hash
     }
 
     /**
+     * Prevent timing attacking by comparing the two hashes using the same time whether they're equal or not.
+     *
+     * @link https://www.php.net/manual/en/function.hash-equals.php
+     *
      * @param string $knownString
      * @param string $userString
      *
@@ -46,7 +50,7 @@ class Hash
             return hash_equals($knownString, $userString);
         }
 
-        // For PHP < 5.6
+        // For PHP < 5.6, since hash_equals() is only available in PHP >= 5.6
         if (strlen($knownString) !== strlen($userString)) {
             return false;
         }
